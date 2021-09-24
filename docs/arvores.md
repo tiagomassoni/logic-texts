@@ -1,0 +1,7 @@
+# Árvores e Tableaux Semântico
+
+A tabela verdade é um negócio onipresente! Você já viu esse assunto várias vezes na sua vida, e eis que aqui, de novo, você teve que mergulhar nele de novo, que preguiça! De fato, na lógica, a tabela verdade tem mil e uma utilidades: podemos com ela investigar propriedades tanto de **fórmulas** quanto de **argumentos**. 
+
+Você lembra, né, que pra saber se uma fórmula é válida/tautologia/verdade lógica (só modelos!) ou satisfazível (pelo menos um modelo), basta navegar de interpretação por interpretação, linhas da tabela verdade, pra achar a resposta. Dá pra investigar também se duas fórmulas são equivalentes, consultando a coincidência do resultado de suas tabelas. Ah, e pra argumentos? Dá pra ver se eles são válidos, olhando pra tabela que incluir as premissas e a conclusão. E aí, quando se tem linhas em que as premissas são verdadeiras e a conclusão é falsa, temos um argumento *inválido*, caso contrário, garantimos que ele é *válido*.
+
+Mesmo tendo uma ferramenta tão útil nas nossas mãos, a lógica desenvolveu vários outros métodos alternativos pra fazer tudo isso aí. E tem pelo menos dois bons motivos nessa busca por alternativas. Primeiro, tabelas verdade são muito, muito **custosas** pra construir. Com apenas cinco proposições atômicas em uma fórmula, a tabela já fica com 32 linhas; ou seja, custo exponencial -- para n variáveis, $2^n$ linhas, um horror.

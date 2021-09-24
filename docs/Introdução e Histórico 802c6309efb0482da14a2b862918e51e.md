@@ -1,7 +1,5 @@
 # Introdução e Histórico
 
-## Somos seres lógicos?
-
 As pessoas em geral assumem que a lógica é inata, como se fosse uma ferramenta com a qual viemos ao mundo. Como se nosso cérebro já viesse assim de fábrica. A gente sempre reclama de alguém, usando a expressão "não tem lógica", com base na presunção de que esta outra pessoa deveria saber disso de antemão, sem ter estudado qualquer outra coisa. Mas isso é *fake news!* Além de ser necessário, pois é muito comum nos perdermos na lógica dos argumentos que ouvimos ou lemos por aí, o estudo da lógica é interessante por dois principais motivos:
 
 - A lógica possui suas armadilhas, das quais nem a melhor capacidade cognitiva humana consegue escapar; essas "cascas de banana retóricas" já eram conhecidas dos gregos há pelo menos uns 2200 anos – os primeiros que estudaram a lógica de forma sistemática;
