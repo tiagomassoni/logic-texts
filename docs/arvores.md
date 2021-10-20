@@ -1,6 +1,6 @@
 # Árvores e Tableaux Semântico
 
-A tabela verdade é um negócio onipresente! Você já viu esse assunto várias vezes na sua vida, e eis que aqui, de novo, você teve que mergulhar nele de novo, que preguiça! De fato, na lógica, a tabela verdade tem mil e uma utilidades: podemos com ela investigar propriedades tanto de **fórmulas** quanto de **argumentos**.
+A tabela verdade nos persegue! Repete mais que filme novo do *Resident Evil*. Você já viu esse assunto várias vezes na sua vida, e eis que aqui, em lógica, de novo, você teve que mergulhar nele, que preguiça! De fato, na lógica, a tabela verdade tem mil e uma utilidades: podemos com ela investigar propriedades tanto de **fórmulas** quanto de **argumentos**.
 
 Você lembra, né, que pra saber se uma fórmula é válida/tautologia/verdade lógica (só modelos!) ou satisfazível (pelo menos um modelo), basta navegar de interpretação por interpretação, linhas da tabela verdade, pra achar a resposta. Dá pra investigar também se duas fórmulas são equivalentes, consultando a coincidência do resultado de suas tabelas. Ah, e pra argumentos? Dá pra ver se eles são válidos, olhando pra tabela que incluir as premissas e a conclusão. E aí, quando se tem linhas em que as premissas são verdadeiras e a conclusão é falsa, temos um argumento *inválido*, caso contrário, garantimos que ele é *válido*.
 
@@ -8,11 +8,11 @@ Mesmo tendo uma ferramenta tão útil nas nossas mãos, a lógica desenvolveu v�
 
 Uma alternativa é tentar evitar construir *todas* as linhas, e sim direcionar nossa busca para linhas mais promissoras de alguma forma, dependendo do intuito da busca. Por exemplo, se queremos ver se uma fórmula é satisfazível, tentar investigar a fundo apenas as interpretações que, dependendo da fórmula, tendem a nos levar mais rápido a uma solução que satisfaz (um modelo). Em essência, isso pode acontecer se estruturarmos a solução não mais em termos de uma tabela, mas como uma **árvore** de fórmulas e proposições.
 
-Árvores são um velho amor das computeiras e dos computeiros em geral, só não gostamos mais de árvore de que de café. A gente usa árvore pra um monte de coisa, e vocês vão vê-las bastante até o diploma. Ah, uma coisa importante, a gente desenha árvore de cabeça pra baixo, a raíz pra cima e os ramos e folhas pra baixo, ok? 
+Árvores são um velho amor das computeiras e dos computeiros em geral, só não gostamos mais de árvore que de café. A gente usa árvore pra um monte de coisa, e vocês vão vê-las bastante até o diploma. Ah, uma coisa importante, a gente desenha árvore de cabeça pra baixo, a raíz pra cima e os ramos e folhas pra baixo, ok? 
 
-E afinal, o que é legal numa árvore pra lógica? Ela permite que a gente considere apenas as partes de uma fórmula que podem ser verdade por testes parciais, e então, com essas certezas dos testes, podemos explorar as partes da fórmula que prometem ser verdade. Ou seja, árvores são ótimas pra **testar (e provar) que uma fórmula, ou um conjunto de fórmulas é satisfazível**. Mas isso não vai nos impedir de aplicar árvores com outros intuitos, como vocês vão ver. Numa árvore, no geral, começamos escrevendo proposições que supomos ser verdadeiras. A partir delas, derivamos, descendo na árvore, proposições menores que têm que ser verdadeiras, caso as originais sejam. Por exemplo, f ∧ g sendo a fórmula original, sabemos que para ela ser verdadeira tanto f como g precisam ser verdadeiras (proposições menores, derivadas da primeira). A partir dessa derivação -- que é disciplinada por certas regrinhas, que vamos ver -- chegamos a dois resultados possíveis: uma contradição (insatisfação) ou um cenário verdadeiro, que nos dá um possível modelo para a fórmula original.
+E afinal, o que é legal numa árvore pra lógica? Ela permite que a gente considere apenas as partes de uma fórmula que podem ser verdade por testes parciais, e então, com essas certezas dos testes, podemos explorar as partes da fórmula que prometem ser verdade. Ou seja, árvores são ótimas pra **testar (e provar) que uma fórmula, ou um conjunto de fórmulas, é satisfazível**. Mas isso não vai nos impedir de aplicar árvores com outros intuitos, como vocês vão ver depois. Numa árvore, no geral, começamos escrevendo proposições que supomos ser verdadeiras. A partir delas, derivamos, descendo na árvore, proposições menores que têm que ser verdadeiras, caso o sejam as originais. Por exemplo, f ∧ g sendo a fórmula original, sabemos que para ela ser verdadeira tanto f como g precisam ser verdadeiras (proposições menores, derivadas da primeira). A partir dessa derivação -- que é disciplinada por certas regrinhas -- chegamos a dois resultados possíveis: uma contradição (insatisfação) ou um cenário verdadeiro, que nos dá um possível modelo para a fórmula original.
 
-Nossa primeira aplicação de árvores  é o chamada Tableaux semântico, que testa se uma fórmula é satisfazível. As regras que veremos aqui servirão para nossas outras aplicações de árvore, mais à frente.
+Nossa primeira aplicação de árvores é chamada Tableaux semântico, que testa se uma fórmula é satisfazível. As regras que veremos aqui servirão para nossas outras aplicações de árvore, mais à frente.
 
 ## Tableaux Semântico
 
@@ -30,15 +30,15 @@ A árvore sempre se inicia com a raíz, a fórmula completa que queremos mostrar
 * ((a → b) **∧** c): a conjunção
 * **¬**(a∧b): a negação
 
-A partir desse conectivo, quebramos a fórmula em subfórmulas. Quais subfórmulas? Depende do conectivo. Vamos pegar um dos exemplos e desenvolver, ((a → b) **∧** c). Nesse caso, temos uma conjunção, o que define que, pra essa fórmula ser verdade, tanto a subfórmula *(a → b)* como *c* devem ser verdade também, *separadamente*. Quando é assim, a gente separa as duas subfórmulas como tendo que ser verdade juntas, com uma vírgula, criando um novo nó na nossa árvore.
+A partir desse conectivo, quebramos a fórmula em subfórmulas. Quais subfórmulas? Depende do conectivo. Vamos pegar um dos exemplos e desenvolver, ((a → b) **∧** c). Nesse caso, temos uma conjunção, o que define que, pra essa fórmula ser verdade, tanto a subfórmula *(a → b)* como *c* devem ser verdade também, *ao mesmo tempo*. Quando é assim, a gente separa as duas subfórmulas como tendo que ser verdade juntas, com uma vírgula, criando um novo nó na nossa árvore.
 
 ![arvores/t1.png](arvores/t1.png)
 
-Chamamos essa regra que cria apenas um nó, com duas verdades obrigatórias, de **regra alfa**. Todas as fórmulas *conjuntivas* podem ser entrada pra essa regra, veja a tabela abaixo. O que quero dizer com fórmula conjuntiva é aquela que no fim vai dar em conjunção depois de alguma manipulação. Por exemplo, ¬(a∨b), por De Morgan, no fim é ¬a ∧ ¬b, uma conjunção. Mesmo coisa pra dupla negação e pra negação de uma implicação.
+Chamamos essa regra que cria apenas um nó, com duas verdades obrigatórias, de **regra alfa**. Todas as fórmulas *conjuntivas* podem ser entrada pra essa regra, veja a tabela abaixo. O que quero dizer com fórmula conjuntiva é aquela que no fim vai dar em conjunção depois de alguma manipulação. Por exemplo, ¬(a∨b), por De Morgan, no fim é ¬a ∧ ¬b, uma conjunção. Mesma coisa pra dupla negação e pra negação de uma implicação, além da bi-implicação.
 
 ![arvores/t2.png](arvores/t2.png)
 
-Vamos em frente no nosso exemplos. A condição de parada do algoritmo é quando **o nó só tem literais**, o que não é o caso, pois temos *(a → b)*. Assim, temos que continuar descendo, cara pálida. Sabemos que uma implicação no fim é uma disjunção, ¬a ∨ b. Quando temos uma disjunção, temos que considerar **duas possibilidades** de verdade, por isso criamos na árvore uma bifurcação, que chamamos de **regra beta**.
+Vamos em frente no nosso exemplo. A condição de parada do algoritmo é quando **o nó só tem literais**, o que não é o caso, pois temos *(a → b)*. Assim, temos que continuar descendo, cara pálida. Sabemos que uma implicação no fim é uma disjunção, ¬a ∨ b. Quando temos uma disjunção, temos que considerar **duas possibilidades** de verdade, por isso criamos na árvore uma bifurcação, que chamamos de **regra beta**.
 
 ![arvores/t3.png](arvores/t3.png)
 
@@ -63,6 +63,11 @@ Com tanto nó aberto assim, dá a impressão que essa fórmula seria sempre verd
 
 Como é possível ver no esquema acima, se você negar a fórmula original e rodar o Tableaux, você prova que ela é uma tautologia se a negação sempre resultar **em falso**, ou seja, insatisfazível. Lembrando, um procedimento que testa satisfazibilidade pode ser usado para testar validade, e vice-versa, com as negações aplicadas corretamente.
 
+Bom, pra finalizar, vamos falar sobre o desempenho deste novo método pra verificar se uma fórmula é satisfazível. Será que, usando uma árvore, conseguiremos um procedimento mais rápido que a tabela-verdade? O uso de árvores normalmente implica alguma melhora de desempenho.
+
+Neste caso, sim, há uma melhora no desempenho. No entanto, teoricamente, não é bem assim, porque, dependendo da estrutura da fórmula, se ela incluir n proposições atômicas, a árvore pode gerar  <img src="https://latex.codecogs.com/svg.latex?\inline&space;\bg_white&space;2^{n}" title="2^{n}" /> nós-folha, aqueles apenas com literais complementares. Se acontecer desta fórmula ser insatisfazível -- o pior caso -- o algoritmo vai acabar fazendo o mesmo número de testes que seriam realizados em uma tabela-verdade. De novo, um horror!
+
+Felizmente, na prática, o tableaux acaba sendo mais eficiente, pois uma estrutura de fórmula mais amigável, e com mais algumas otimizações, seu desempenho medido acaba sendo melhor. Por exemplo, a árvore tende a ficar menor se o algoritmo preferir sempre aplicar uma regra alfa antes de uma regra beta, já que esta sempre bifurca a árvore, criando dois ramos, o que em geral aumenta a árvore e o número de testes. Otimizações como essa acabam fazendo o algoritmo ficar mais rápido.  
 
 
 
