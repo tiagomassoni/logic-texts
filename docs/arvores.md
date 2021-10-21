@@ -47,7 +47,7 @@ Com isso, temos dois novos nós na árvore. Como neles só tem literais, chegamo
 ![arvores/t4.png](arvores/t4.png)
 
 
-Chegou a hora então do algoritmo fazer sua análise final, verificar se o nó-folha é aberto ou fechado. Um nó **aberto** é satisfazível, ou seja, não tem contradição. Contradição aqui seria a presença de dois literais **complementares**, por exemplo ¬a, a no mesmo nó; isso nos diria que aquele caminho na árvore não pode ser verdadeiro, então o nó estaria **fechado**. Nesse caso, nenhum dos dois nós possui literais complementares, então ambos são satisfazíveis, ou seja, abertos. A presença de pelo menos um nó-folha aberto prova que a fórmula original é satisfazível. Além desse resultado, qualquer um dos nós-folha nos oferece a interpretação que define um modelo pra fórmula; por exemplo, um nó com ¬a,c nos diz que qualquer interpretação com a=F e c=T define um modelo na tabela verdade dessa fórmula. 
+Chegou a hora então do algoritmo fazer sua análise final, verificar se o nó-folha é aberto ou fechado. Um nó **aberto** é satisfazível, ou seja, não tem contradição. Contradição aqui seria a presença de dois literais **complementares**, por exemplo ¬a, a no mesmo nó; isso nos diria que aquele caminho na árvore não pode ser verdadeiro, então o nó estaria **fechado**. Nesse caso, nenhum dos dois nós possui literais complementares, então ambos são satisfazíveis, ou seja, abertos. A presença de pelo menos um nó-folha aberto prova que a fórmula original é satisfazível. Além desse resultado, qualquer um dos nós-folha *nos oferece a interpretação que define um modelo pra fórmula*; por exemplo, um nó com ¬a,c nos diz que qualquer interpretação com a=F e c=T define um modelo na tabela verdade dessa fórmula. 
 
 Vejamos um exemplo com nós fechados. Na figura abaixo, temos uma fórmula claramente contraditória, portanto insatisfazível. Ao fazer seu tableaux semântico, chegamos, como resultado, em dois nós-folha, ambos apresentando pelo menos um par de literais complementares. Assim, os dois são fechados; não tendo nenhum nó aberto, o algoritmo então nos responde, FALSO.
 
@@ -62,6 +62,30 @@ Com tanto nó aberto assim, dá a impressão que essa fórmula seria sempre verd
 ![arvores/t7.png](arvores/t7.png)
 
 Como é possível ver no esquema acima, se você negar a fórmula original e rodar o Tableaux, você prova que ela é uma tautologia se a negação sempre resultar **em falso**, ou seja, insatisfazível. Lembrando, um procedimento que testa satisfazibilidade pode ser usado para testar validade, e vice-versa, com as negações aplicadas corretamente.
+
+### Forma alternativa de representação
+
+Para facilitar desenho e análise do tableaux, podemos trabalhar de uma forma gráfica mais simples. Considere a verificação de satisfazibilidade abaixo, para a fórmula (A → B) ∧ (B → A), que resulta em dois nós-folha abertos e dois fechados.
+
+![arvores/t8.png](arvores/t8.png)
+
+Do jeito que a gente viu até agora, temos várias repetições de fórmulas e literais, pois, a cada regra beta aplicada, trazemos junto as fórmulas (B → A) e literais (¬A,B) que já eram consideradas antes, para verificar a presença do par de literais complementares no final. Mas tem um jeito que evita a repetição, que modifica a forma como verificamos a satisfação; não vamos olhar mais para os nós-folha, mas os **caminhos** na árvore. Um caminho na árvore é uma rota completa começando na proposição mais acima até um nó-folha. Nesta representação alternativa, fórmulas e subfórmulas aparecem apenas uma vez na árvore, como na figura a seguir, com o mesmo exemplo.
+
+![arvores/t9.png](arvores/t9.png)
+
+A primeira regra alfa aplicada desenha as duas subfórmulas (A → B) e (B → A) apenas uma vez, colocando um sinal verde na fórmula, mostrando que ela já foi "decomposta". Fazemos isso também com (B → A), através da regra beta que gera os nós abaixo. Na figura a seguir, desenvolvemos B → A com outra regra beta, finalizando a árvore, pois não há mais fórmulas a desenvolver.
+
+![arvores/t10.png](arvores/t10.png)
+
+Pois então vamos verificar. Percebam que agora os nós-folha não tem mais conjuntos de literais, mas apenas um. No entanto, vamos olhar agora pros caminhos a partir da raiz da árvore. Um caminho *fechado* é aquele que, durante o caminho, encontra literais complementares! Não é muito diferente, né? Já um caminho *aberto* não passa por literais complementares. Assim, se a árvore tiver todos os caminhos fechados a partir da raiz para as folhas ela é insatisfazível. Nosso exemplo é satisfazível pois apresenta pelo menos um caminho aberto...vejam na figura.
+
+![arvores/t11.png](arvores/t11.png)
+
+Provavelmente usaremos mais esta representação daqui pra frente, pela economia de espaço.
+
+
+### Desempenho do Tableaux
+
 
 Bom, pra finalizar, vamos falar sobre o desempenho deste novo método pra verificar se uma fórmula é satisfazível. Será que, usando uma árvore, conseguiremos um procedimento mais rápido que a tabela-verdade? O uso de árvores normalmente implica alguma melhora de desempenho.
 
