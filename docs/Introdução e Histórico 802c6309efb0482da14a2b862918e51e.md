@@ -207,6 +207,8 @@ E, para nós da computação, a álgebra booleana apenas se torna a base da máq
 
 A partir daí, poderiam ser criados circuitos comutadores através de *portas lógicas*, circuitos padrão formados por um conjunto fixo de relés; um relé abre e fecha um circuito dependendo da corrente elétrica que passa por sua bobina, por causa do campo magnético que essa ação provoca. A gente aqui não precisa ir nos detalhes disso, e hoje não se usa mais relés, pois seriam insuportavelmente lentos e enormes consumidores de energia – a invenção do transistor e da eletrônica de estado sólido (a partir do final da década de 40) determinaram o que se usa nas máquinas hoje –; só precisamos saber que é isso que acontece em alta escala lá por baixo dos panos, portas AND, OR, NOT em gigantesca quantidade implementando as instruções do processador através de zeros e uns.
 
+Esses dias descobri um joguinho na Steam que demonstra, de forma lúdica, a importância da contribuição de Shannon para a computação ([Turing Complete](https://store.steampowered.com/app/1444480/Turing_Complete/)).
+
 ## A lógica está em todos os lugares
 
 As inferências e deduções que realizamos na nossa rotina são baseadas, em grande parte, no raciocínio lógico. Uma médica deve raciocinar, a partir dos sintomas demonstrados, o diagnóstico; o mesmo faz um mecânico de automóveis (afinal, são muito parecidos, ambos dizem no final que o problema está na rebimboca da parafuseta, e a gente acredita e gasta uma grana pra consertar). Detetives da televisão ou da vida real devem processar as pistas coletadas de forma lógica para tentar chegar a teorias de como os crimes aconteceram. Donos de empresa tomam decisões de negócio baseadas na análise lógica dos sinais do momento e das possibilidades futuras. Um jurado num tribunal deve pesar as evidências e seguir a lógica de quem acusa e de quem defende: **se** o réu estava no cinema na hora do crime, **então** ele não poderia ter cometido o crime. No fim das contas, qualquer atividade de *resolução de problemas*, ou o que os educadores chamam de *pensamento crítico*, envolve um casamento de padrões e a chegada a conclusões através de um caminho lógico.
@@ -225,11 +227,11 @@ Sendo justo com os criadores dos formulários, há um problema aí mais sério d
 
 Mais um exemplo de como a dedução lógica pode ser sutil. Vamos considerar o seguinte problema:
 
-**Estou pensando em uma das duas cores (cinza ou branco) e em uma das duas formas (losango ou círculo). Se um símbolo tem a cor que eu estou pensando, ou a forma que estou pensando, ou ambos, então eu o aceito, senão eu o rejeito. Eu aceito o losango azul. Qual desses símbolos abaixo eu aceito ou rejeito?**
+**Estou pensando em uma das duas cores (cinza ou branco) e em uma das duas formas (losango ou círculo). Se um símbolo tem a cor que eu estou pensando, ou a forma que estou pensando, ou ambos, então eu o aceito, senão eu o rejeito. Eu aceito o losango cinza. Qual desses símbolos abaixo eu aceito ou rejeito?**
 
 ![intro/Untitled.png](intro/Untitled.png)
 
-Uma inferência incorreta frequente é concluir que o círculo branco deve ser rejeitado. Estranho, né? Mas veja: o losango cinza pode ser aceito se o experimentador estiver pensando em *círculo* e *azul*...nesse caso, o círculo branco não pode ser rejeitado. O que erramos é assumir que, na aceitação de losango cinza, o experimentador traz alguma informação adicional que definiria o problema, mas na verdade não sabemos de nada que nos faria saber a escolha final dele! Ou seja, não dá pra fazer a inferência que pensamos poder fazer. E essa é uma situação mais comum do que se imagina. Os métodos dedutivos que veremos nesta disciplina vão revelar várias anomalias semelhantes a esta no nosso raciocínio.
+Uma inferência incorreta frequente é concluir que o círculo branco deve ser rejeitado. Estranho, né? Mas veja: o losango cinza pode ser aceito se o experimentador estiver pensando em *círculo* e *cinza*...nesse caso, o círculo branco não pode ser rejeitado! O que erramos é assumir que, na aceitação de losango cinza, o experimentador traz alguma informação adicional que definiria o problema, mas na verdade não sabemos de nada que nos faria saber a escolha final dele! Ou seja, não dá pra fazer a inferência que pensamos poder fazer. E essa é uma situação mais comum do que se imagina. Os métodos dedutivos que veremos nesta disciplina vão revelar várias anomalias semelhantes a esta no nosso raciocínio.
 
 ### Referências
 
