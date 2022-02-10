@@ -4,5 +4,5 @@
 
 [3. Provas de Argumentos](https://tiagomassoni.github.io/logic-texts/provas.html)
 
-[4. Provas de Argumentos com Predicados](https://tiagomassoni.github.io/logic-texts/provas_predicados.html)
+[4. Provas de Argumentos para Lógica de Predicados](https://tiagomassoni.github.io/logic-texts/provas_predicados.html)
 
