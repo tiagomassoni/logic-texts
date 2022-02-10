@@ -8,9 +8,9 @@ Basta, para isso, usar, como raiz da árvore, duas fórmulas em vez de apenas um
 
 A árvore sempre nos responde um mesmo tipo de pergunta: **se todas as proposições no topo da árvore podem ser verdadeiras em uma mesma interpretação**, ou seja, se o conjunto destas proposições é satisfazível. Por outro lado, uma árvore nunca pode nos responder, diretamente, se essas proposições são tautologias; ela é incapaz de responder se **uma proposição pode ser falsa**. 
 
-Quero resgatar agora o conceito de **argumento**, trazendo-o pra esse mundo de árvores. Lembra, né, argumento, aquele conjunto de fórmulas com uma conclusão e zero ou mais premissas? Pois é, argumento é um conjunto de fórmulas. Conseguimos provar se um argumento é válido com a nossa amiga tabela-verdade, através do conceito de vinculação semântica (todas as premissas sendo verdadeiras em uma interpretação obriga a conclusão a ser verdadeira, sem isso o argumento é inválido). Resgatando um exemplo aqui:
+Quero resgatar agora o conceito de **argumento**, trazendo-o pra esse mundo de árvores. Lembra, né, argumento, aquele conjunto de fórmulas com uma conclusão e zero ou mais premissas? Pois é, argumento é um conjunto de fórmulas. Conseguimos provar se um argumento é válido com a nossa amiga tabela-verdade, através do conceito de vinculação semântica (todas as premissas sendo verdadeiras em uma interpretação obriga a conclusão a ser verdadeira, sem isso o argumento é inválido). Resgatando um exemplo aqui: 
 
-<img src="https://latex.codecogs.com/svg.image?A\rightarrow&space;B,&space;B\rightarrow&space;C&space;\models&space;A\rightarrow&space;C" title="A\rightarrow B, B\rightarrow C \models A\rightarrow C" />
+$A\rightarrow B, B\rightarrow C \models A\rightarrow C$
 
 Será que a árvore pode nos ser útil na hora de provar um argumento como este, nos salvando da ineficiência da tabela-verdade? Pior que sim.
 
@@ -28,7 +28,7 @@ Notem que já apliquei uma regra alfa, na negação da conclusão, gerando dois 
 
 Olha aí! Todos os caminhos da raiz até as folhas estão fechados (em cada caminho há um par de literais complementares). Isso quer dizer, dentro do nosso método de prova, que o **argumento original é então válido**. Vejam agora um exemplo que modifiquei um pouco, só pra chegarmos em um resultado diferente.
 
-<img src="https://latex.codecogs.com/svg.image?A\rightarrow&space;C,&space;B\rightarrow&space;C&space;\models&space;B\rightarrow&space;A" title="A\rightarrow C, b\rightarrow C \models B\rightarrow A" />
+$A\rightarrow C, b\rightarrow C \models B\rightarrow A$
 
 Fazendo a mesma coisa, com premissas e negação da conclusão; aqui aplicamos primeiro a regra alfa na negação da conclusão, então aplicamos regra beta em A→C antes de aplicar no final em B→C. Neste caso, aparecem dois caminhos abertos. Podemos considerar qualquer um deles para dizer que **o argumento é inválido**. O legal desse teste é que ele também fornece um **contraexemplo**; neste caso, qualquer caminho aberto encontrado.  No caminho aberto destacado na figura, vemos B e C aparecerem não-negados, enquanto A aparece negado, o que definem o nosso contraexemplo -- quando A é falso, e B e C são verdadeiros, nosso argumento cai por terra.
 
@@ -38,7 +38,7 @@ Notem, mais uma vez, o ganho potencial de desempenho. A tabela verdade para este
 
 Vamos terminar com um exemplo um pouco mais complicado, provando um dos corolários (hã?) das regras de De Morgan. 
 
-<img src="https://latex.codecogs.com/svg.image?\neg&space;p&space;\vee\neg&space;q&space;\models&space;\neg(p\wedge&space;q)" title="\neg p \vee\neg q \models \neg(p\wedge q)" />
+$\neg p \vee\neg q \models \neg(p\wedge q)$
 
 Começamos a árvore sempre da mesma forma: colocando premissas e conclusão negada na raiz. Já aplicamos de cara a regra alfa básica para eliminar a dupla negação da conclusão.
 
