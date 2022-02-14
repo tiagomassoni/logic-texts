@@ -1,6 +1,6 @@
 # Provas para Lógica de Predicados com Árvores
 
-Com proposições, as árvores servem como meio eficiente de buscar a satisfação de uma (ou mais ao mesmo tempo) fórmula(s), através da procura sistemática por um modelo que satisfaça essa(s) fórmula(s). Não deve ser surpresa para você que, na lógica de predicados, pretendemos usar o tableaux com o mesmo objetivo. 
+Com proposições, as árvores servem como meio eficiente de buscar a satisfação de uma ou mais fórmulas, através da procura sistemática por um modelo que satisfaça essa(s) fórmula(s). Não deve ser surpresa para você que, na lógica de predicados, pretendemos usar o tableaux com o mesmo objetivo. 
 
 Para que isso seja possível, no entanto, precisaremos estender nossa caixa de ferramentas com regras de expansão da árvore na presença de **quantificadores** e de **igualdade**, que são os elementos novos por ora. Além disso, no momento de definir o modelo que faz a fórmula ficar verdadeira (ou falsa), precisaremos usar a ideia de modelo estendido da lógica de predicados.
 
@@ -12,7 +12,7 @@ Da mesma forma, se queremos testar se uma fórmula é válida, testamos se a neg
 
 As regras que usaremos serão as mesmas regras alfa e beta, conjuntivas e disjuntivas, respectivamente. Claro, teremos que aumentar esse conjunto, para podermos lidar com os quantificadores (para todo e existe), e também com a igualdade, os elementos novos adicionados na lógica de predicados. Teremos seis novas regras, duas para cada novo elemento; nenhuma delas criará desvios na árvore, como fazem as regras beta. Elas sempre criarão um novo filho apenas; teremos agora que tomar um certo cuidado para manipular as variáveis envolvidas nessas aplicações. 
 
-Antes de falar sobre as novas regras, vamos tentar pensar sobre as regras na árvore de uma maneira geral, e assim deixar claro como vamos lidar com predicados. Se estamos aplicando uma regra no final de um caminho *p* -- considerando um caminho como uma sequência de fórmulas. Se estamos aplicando uma regra alfa, estendendo *p* para *p'*, adicionando uma nova fórmula no final da sequência, então a regra deve ter a seguinte propriedade:
+Antes de falar sobre as novas regras, vamos tentar pensar sobre as regras na árvore de uma maneira geral, e assim deixar claro como vamos lidar com predicados. Se estamos aplicando uma regra no final de um caminho *p* -- considerando um caminho como uma sequência de fórmulas. Se estamos aplicando uma regra alfa, por exemplo, estendendo *p* para *p'*, adicionando uma nova fórmula no final da sequência, então a regra deve ter a seguinte propriedade:
 
 > Se existe um modelo para o qual todas as fórmulas no caminho *p* são verdadeiras, então existe um modelo para o qual toda fórmula em *p'* é verdadeira.
 
@@ -33,7 +33,7 @@ Vamos agora pra regra de quantificador existencial não-negado. Nesta, vale pres
 
 ![arvore_pred/t2.png](arvore_pred/t2.png)
 
-Aqui estamos considerando um *a*zinho maroto, que consideramos como uma nova **constante** na árvore, um nome que não aparece em lugar algum no caminho atual. A convenção é indicar essa nova constante no lado direito, ao lado do *check*, facilitando a leitura. 
+Aqui estamos considerando um *a*zinho maroto, que consideramos como uma **nova constante** na árvore, um nome que não aparece em lugar algum no caminho atual. A convenção é indicar essa nova constante no lado direito, ao lado do *check*, facilitando a leitura. 
 
 Tentando nos convencer de que a regra é correta de acordo com a nossa definição de árvore, suponha que temos um modelo *M* no qual $\exists x \alpha(x)$ é verdade. Assim, com certeza, esse modelo possui um elemento do conjunto considerado que faz $\alpha(a/x)$ ficar verdadeiro (considerando aqui a/x a constante tomando o lugar da variável x).
 
@@ -45,16 +45,14 @@ Até aqui ok. Falta aqui então tentar aplicar a regra novamente para $\exists x
 
 ![arvore_pred/t5.png](arvore_pred/t5.png)
 
-Assim a árvore resulta em uma fómrula insatisfazível, por causa da contradição. No entanto, o problema aqui é que a constante *a* não pode ser usada novamente, tornando essa aplicação de regra incorreta! 
-
-No contexto de uma regra beta, no entanto, podemos usar a mesma constante, no caso de caminhos alternativos. O exemplo abaixo é um desenvolvimento correto.
+Assim a árvore resulta em uma fómrula insatisfazível, por causa da contradição. No entanto, o problema aqui é que a constante *a* já tinha sido usada, tornando essa aplicação de regra incorreta!  No contexto de uma regra beta, no entanto, podemos usar a mesma constante, no caso de caminhos alternativos. O exemplo abaixo é um desenvolvimento correto.
 
 ![arvore_pred/t6.png](arvore_pred/t6.png)
 
 
 ### Quantificador Universal
 
-De forma similar, a regra mais fácil expande uma negação de quantificador universal para um quantificador existencial, passando a negação para a fórmula interna.
+De forma similar, a regra mais fácil transforma uma negação de quantificador universal em um quantificador existencial, passando a negação para a fórmula interna.
 
 ![arvore_pred/t3.png](arvore_pred/t3.png)
 
@@ -81,13 +79,15 @@ Em geral, é conveniente aplicarmos as regras de árvore para a lógica de predi
 
 4. regra para quantificar universal
 
-Depois disso, retorna para o primeiro passo, se for o caso. Essa heurística tende a gerar árvores menores, o que traz melhor desempenho para o algoritmo.
+Depois disso, retorna para o primeiro passo, se for o caso. Essa heurística tende a gerar árvores menores, o que traz melhor desempenho para o algoritmo. Todas as regras usadas na árvore para lógica de predicados pode ser vista no Quadro abaixo.
+
+![arvore_pred/quadro.png](arvore_pred/quadro.png)
 
 Vamos ver um exemplo, para a fórmula $[\exists x F(x) \wedge \forall x(F(x) \rightarrow G(x))]\rightarrow \exists G(x)$. Queremos verificar se ela é válida, portanto vamos verificar se sua negação é insatisfazível. A partir dela, a primeira regra alfa separa os dois lados da negação da implicação.
 
 ![arvore_pred/t9.png](arvore_pred/t9.png)
 
-Percebam que usamos as chaves, do lado direito, para indicar de forma direta a origem da fórmula. Para isso, é fundamental manter a numeração das linhas. Em seguida, aplicamos a regra alfa na conjunção da linha 2, finalizando o primeiro passo da heurística. Após isso, aplicamos as regras de quantificador negado (Linha 6). 
+Percebam que usamos aqui chaves do lado direito, para indicar a origem da fórmula atual. Para isso, é fundamental manter a numeração das linhas. Em seguida, aplicamos a regra alfa na conjunção da linha 2, finalizando o primeiro passo da heurística. Após isso, aplicamos as regras de quantificador negado (Linha 6). 
 
 ![arvore_pred/t10.png](arvore_pred/t10.png)
 
@@ -105,13 +105,74 @@ Com todos os caminhos fechados, a fórmula original é então válida (uma tauto
 
 ## Saturação de caminhos
 
+Antes de voltar a trabalhar com argumentos na árvore, temos que discutir mais sobre propriedades dessa árvore na presença de quantificadores, principalmente por causa dos elementos novos que precisam ser manipulados: constantes e variáveis.
+
+Só podemos tirar conclusões sobre os caminhos de uma árvore quando ela for considerada **finalizada**, que se dá quando todos os caminhos estiverem fechados ou **saturados**. Um caminho saturado ocorre quando todas as regras aplicável foi usada.  Vamos para uma definição um pouco mais detalhada.
+
+Um caminho está saturado se, e somente se:
+* todas as fórmulas do caminho - exceto literais e quantificações universais - foram sujeitas a aplicação de regras;
+* para todas as quantificações universais: a eliminação do quantificador foi aplicada pelo menos uma vez, além de ter sido aplicada para todas as variáveis que aparecem no caminho.
+
+Exemplos, então. A árvore abaixo é considerada finalizada. Não há novas regras para aplicar para as fórmulas literais $F(a)$ e $G(a)$. Para $\forall x G(x)$, a regra foi aplicada uma vez, para todos os nomes de variável que aparecem (apenas $a$).
+
+![arvore_pred/t13.png](arvore_pred/t13.png)
+
+Já a árvore abaixo não está finalizada. 
+
+![arvore_pred/t14.png](arvore_pred/t14.png)
 
 
+Para isso, precisamos aplicar a regra universal novamente para $\forall x G(x)$, usando o nome $b$, já que ele ocorre no caminho. 
 
-
-
-
-
-
+![arvore_pred/t15.png](arvore_pred/t15.png)
 
 ## Provas de argumentos com árvores
+
+Vamos aos exemplos de argumentos com lógica de predicados, trabalhando na prova baseada em árvores da sua validade (ou contra-exemplo, no caso de argumentos inválidos). Vamos começar pelo seguinte argumento: 
+
+$\exists F(x), \exists G(x)  \models \exists (F(x)\wedge G(x))$.
+
+Tá meio estranho, né? se alguém é girafa, e também alguém bebe uísque, podemos concluir que existe uma girafa que bebe uísque? Pois é, jeito de argumento inválido, mas vamos provar isso. Na árvore, lembrando, colocamos as premissas junto com a negação da conclusão.
+
+![arvore_pred/t16.png](arvore_pred/t16.png)
+
+Podemos começar aplicando a regra da negação dos quantificadores, no caso da conclusão, gerando um quantificador universal. Depois, começamos eliminando os existenciais das Linhas 1 e 2 (lembrando que temos que usar constantes distintas). As linhas 5 e 6 são consideradas fórmulas literais.
+
+![arvore_pred/t17.png](arvore_pred/t17.png)
+
+Resta agora trabalhar com o quantificador universal da Linha 4, gerando a Linha 7. 
+
+![arvore_pred/t18.png](arvore_pred/t18.png)
+
+Opa, conjunção negada, regra beta! Vamos explorar o lado esquerdo primeiro, $\neg F(a)$, o que já de cara gera um caminho fechado.
+
+![arvore_pred/t19.png](arvore_pred/t19.png)
+
+Agora, o outro lado, com $\neg G(a)$. A princípio, com este literal, não há nada a fazer, pois não há o contrário dele no caminho. No entanto, percebemos que o caminho aqui não está *saturado*...a constante $b$ não foi usada para eliminar a quantificação da linha 4! Se fizermos isso, geramos a Linha 10, que vai nos levar a outra regra beta aplicada. Quando isso acontecer, chegaremos a um caminho terminando em $\neg F(b)$, literal que não encontra contraditório acima. Portanto, esse é um caminho aberto, pois agora a árvore está saturada. O que nos leva a concluir que o argumento original era mesmo *inválido*.
+
+![arvore_pred/t20.png](arvore_pred/t20.png)
+
+Já que o argumento não é válido, podemos tentar usar a árvore para achar o contra-exemplo, o caso que mostra o argumento deixando de valer. Na lógica proposicional, tínhamos que achar valores (T,F) para as variáveis da fórmula (uma interpretação). Aqui, só podemos fazer isso através de *modelos*, ou seja, uma definição de conjuntos e predicados.
+
+Lembrando do tópico anterior, para definir um modelo precisamos de um conjunto universo (o domínio) e de definições, a partir desse conjunto universo, para cada predicado e constante. Temos liberdade para definir qualquer conjunto universo, contanto que os nomes que criamos na árvore apareçam nesse conjunto. De forma minimalista, podemos começar com **apenas as constantes da árvore**. 
+
+$U = {a,b}$
+
+Para os predicados, podemos definir os conjuntos que obedecem às fórmulas literais que aparecem no caminho que ficou aberto. Pela árvore, sabemos que $F(a),G(b),\neg G(a), \neg F(b)$; assim, fica simples definir, para os predicados, os seguintes conjuntos: $F={a}$ e $G={b}$. Confira você se um modelo minimalista como esse não faz as premissas verdadeiras e a conclusão falsa! É só considerar $a$ sendo uma girafa, e $b$ uma pessoa que toma uísque.
+
+![arvore_pred/giraffe.png](arvore_pred/giraffe.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
