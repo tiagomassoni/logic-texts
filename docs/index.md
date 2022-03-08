@@ -6,3 +6,6 @@
 
 [4. Provas de Argumentos para Lógica de Predicados](https://tiagomassoni.github.io/logic-texts/provas_predicados.html)
 
+[5. Outros Estilos de Prova](https://tiagomassoni.github.io/logic-texts/outros_estilos.html)
+
+
