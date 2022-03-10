@@ -27,7 +27,7 @@ A primeira regra pra olhar -- por ser mais fácil -- é a tentativa de expandir 
 
 ![arvore_pred/t1.png](arvore_pred/t1.png)
 
-Aqui não tem muito o que pensar, pois estamos simplesmente concluindo que todos os elementos de um conjunto não possuem determinada propriedade, ao assumir que não há nenhum elemento desse conjunto com essa propriedade (considerando $\alpha (x)$ uma fórmula bem formada qualquer em que x é a única variável livre).
+Aqui não tem muito o que pensar, pois estamos simplesmente concluindo que todos os elementos de um conjunto não possuem determinada propriedade, ao assumir que não há nenhum elemento desse conjunto com essa propriedade (considerando <img src="https://render.githubusercontent.com/render/math?math=\alpha (x)">) uma fórmula bem formada qualquer em que x é a única variável livre).
 
 Vamos agora para a regra de quantificador existencial não-negado. Nesta, vale prestar atenção na manipulação de variáveis que precisamos fazer.
 
@@ -35,13 +35,13 @@ Vamos agora para a regra de quantificador existencial não-negado. Nesta, vale p
 
 Aqui estamos considerando um *a*zinho maroto, uma **nova constante** na árvore, um nome que não aparece em lugar algum no caminho atual. A convenção é indicar essa nova constante no lado direito, ao lado do *check*, facilitando a leitura. 
 
-Tentando nos convencer de que a regra é correta de acordo com a nossa definição de árvore, suponha que temos um modelo *M* no qual $\exists x \alpha (x)$ é verdade. Assim, com certeza, esse modelo possui um elemento do conjunto considerado que faz $\alpha (a/x)$ ficar verdadeiro (considerando aqui a/x a constante $a$ tomando o lugar da variável x).
+Tentando nos convencer de que a regra é correta de acordo com a nossa definição de árvore, suponha que temos um modelo *M* no qual <img src="https://render.githubusercontent.com/render/math?math=\exists x \alpha (x)"> é verdade. Assim, com certeza, esse modelo possui um elemento do conjunto considerado que faz *α(a/x)* ficar verdadeiro (considerando aqui *a/x* a constante *a* tomando o lugar da variável x).
 
 Vamos ver um exemplo, com uma fórmula no topo da árvore:
 
 ![arvore_pred/t4.png](arvore_pred/t4.png)
 
-Até aqui ok. Falta aqui então tentar aplicar a regra novamente para $\exists x \neg F(x)$. E se fizermos isso aqui?
+Até aqui ok. Falta aqui então tentar aplicar a regra novamente para *∃x ¬F(x). E se fizermos isso aqui?
 
 ![arvore_pred/t5.png](arvore_pred/t5.png)
 
@@ -83,7 +83,7 @@ Depois disso, retorna para o primeiro passo, se for o caso. Essa heurística ten
 
 ![arvore_pred/quadro.png](arvore_pred/quadro.png)
 
-Vamos ver um exemplo, para a fórmula $[\exists x F(x) \wedge \forall x(F(x) \rightarrow G(x))]\rightarrow \exists G(x)$. Queremos verificar se ela é válida, portanto vamos verificar se sua negação é insatisfazível. A partir dela, a primeira regra alfa separa os dois lados da negação da implicação.
+Vamos ver um exemplo, para a fórmula <img src="https://render.githubusercontent.com/render/math?math=[\exists x F(x) \wedge \forall x(F(x) \rightarrow G(x))]\rightarrow \exists G(x)">. Queremos verificar se ela é válida, portanto vamos verificar se sua negação é insatisfazível. A partir dela, a primeira regra alfa separa os dois lados da negação da implicação.
 
 ![arvore_pred/t9.png](arvore_pred/t9.png)
 
@@ -95,7 +95,7 @@ Vamos entender agora o que fazer agora. Temos um quantificador existencial na Li
 
 ![arvore_pred/t11.png](arvore_pred/t11.png)
 
-A única fórmula a ser desenvolvida aqui é a implicação da Linha 8, o que fazemos com a aplicação da regra beta. No caminho da esquerda, a árvore se fecha pela presença do par $F(a)$  e $\neg F(a)$ — lembrando que F(a) equivale a uma proposição atômica qualquer, aplicando um predicado a uma constante, com resultado em uma valor lógico definido (verdadeiro ou falso). Já no caminho da direita, confrontamos $G(a)$ com o resultado da eliminação de quantificador que ainda sobrou, na Linha 6, que resulta em $\neg G(a)$. Note que, de forma bastante oportunista, usamos a mesma variável *a* que adotamos como constante lá em cima, o que é bastante conveniente, não acha?
+A única fórmula a ser desenvolvida aqui é a implicação da Linha 8, o que fazemos com a aplicação da regra beta. No caminho da esquerda, a árvore se fecha pela presença do par *F(a)  e ¬F(a)* — lembrando que F(a) equivale a uma proposição atômica qualquer, aplicando um predicado a uma constante, com resultado em uma valor lógico definido (verdadeiro ou falso). Já no caminho da direita, confrontamos *G(a)* com o resultado da eliminação de quantificador que ainda sobrou, na Linha 6, que resulta em *¬G(a)*. Note que, de forma bastante oportunista, usamos a mesma variável *a* que adotamos como constante lá em cima, o que é bastante conveniente, não acha?
 
 
 ![arvore_pred/t12.png](arvore_pred/t12.png)
@@ -113,7 +113,7 @@ Um caminho está saturado se, e somente se:
 * todas as fórmulas do caminho - exceto literais e quantificações universais - foram sujeitas a aplicação de regras;
 * para todas as quantificações universais: a eliminação do quantificador foi aplicada pelo menos uma vez, além de ter sido aplicada para todas as variáveis que aparecem no caminho.
 
-Exemplos, então. A árvore abaixo é considerada finalizada. Não há novas regras para aplicar para as fórmulas literais $F(a)$ e $G(a)$. Para $\forall x G(x)$, a regra foi aplicada uma vez, para todos os nomes de variável que aparecem (apenas $a$).
+Exemplos, então. A árvore abaixo é considerada finalizada. Não há novas regras para aplicar para as fórmulas literais *F(a)* e *G(a)*. Para *∀x G(x)*, a regra foi aplicada uma vez, para todos os nomes de variável que aparecem (apenas *a*).
 
 ![arvore_pred/t13.png](arvore_pred/t13.png)
 
@@ -122,7 +122,7 @@ Já a árvore abaixo não está finalizada.
 ![arvore_pred/t14.png](arvore_pred/t14.png)
 
 
-Para isso, precisamos aplicar a regra universal novamente para $\forall x G(x)$, usando o nome $b$, já que ele ocorre no caminho. 
+Para isso, precisamos aplicar a regra universal novamente para *∀x G(x)*, usando o nome *b*, já que ele ocorre no caminho. 
 
 ![arvore_pred/t15.png](arvore_pred/t15.png)
 
@@ -130,7 +130,7 @@ Para isso, precisamos aplicar a regra universal novamente para $\forall x G(x)$,
 
 Vamos aos exemplos de argumentos com lógica de predicados, trabalhando na prova baseada em árvores da sua validade (ou contra-exemplo, no caso de argumentos inválidos). Vamos começar pelo seguinte argumento: 
 
-$\exists F(x), \exists G(x)  \models \exists (F(x)\wedge G(x))$.
+<img src="https://render.githubusercontent.com/render/math?math=\exists F(x), \exists G(x)  \models \exists (F(x)\wedge G(x))$">.
 
 Tá meio estranho, né? se alguém é girafa, e também alguém bebe uísque, podemos concluir que existe uma girafa que bebe uísque? Pois é, jeito de argumento inválido, mas vamos provar isso. Na árvore, lembrando, colocamos as premissas junto com a negação da conclusão.
 
@@ -144,11 +144,11 @@ Resta agora trabalhar com o quantificador universal da Linha 4, gerando a Linha 
 
 ![arvore_pred/t18.png](arvore_pred/t18.png)
 
-Opa, conjunção negada, regra beta! Vamos explorar o lado esquerdo primeiro, $\neg F(a)$, o que já de cara gera um caminho fechado.
+Opa, conjunção negada, regra beta! Vamos explorar o lado esquerdo primeiro, *¬F(a)*, o que já de cara gera um caminho fechado.
 
 ![arvore_pred/t19.png](arvore_pred/t19.png)
 
-Agora, o outro lado, com $\neg G(a)$. A princípio, com este literal, não há nada a fazer, pois não há o contrário dele no caminho. No entanto, percebemos que o caminho aqui não está *saturado*...a constante $b$ não foi usada para eliminar a quantificação da linha 4! Se fizermos isso, geramos a Linha 10, que vai nos levar a outra regra beta aplicada. Quando isso acontecer, chegaremos a um caminho terminando em $\neg F(b)$, literal que não encontra contraditório acima. Portanto, esse é um caminho aberto, pois agora a árvore está saturada. O que nos leva a concluir que o argumento original era mesmo *inválido*.
+Agora, o outro lado, com *¬G(a)*. A princípio, com este literal, não há nada a fazer, pois não há o contrário dele no caminho. No entanto, percebemos que o caminho aqui não está *saturado*...a constante *b* não foi usada para eliminar a quantificação da linha 4! Se fizermos isso, geramos a Linha 10, que vai nos levar a outra regra beta aplicada. Quando isso acontecer, chegaremos a um caminho terminando em *¬F(b)*, literal que não encontra contraditório acima. Portanto, esse é um caminho aberto, pois agora a árvore está saturada. O que nos leva a concluir que o argumento original era mesmo *inválido*.
 
 ![arvore_pred/t20.png](arvore_pred/t20.png)
 
@@ -156,9 +156,9 @@ Já que o argumento não é válido, podemos tentar usar a árvore para achar o 
 
 Lembrando do tópico anterior, para definir um modelo precisamos de um conjunto universo (o domínio) e de definições, a partir desse conjunto universo, para cada predicado e constante. Temos liberdade para definir qualquer conjunto universo, contanto que os nomes que criamos na árvore apareçam nesse conjunto. De forma minimalista, podemos começar com **apenas as constantes da árvore**. 
 
-$U = {a,b}$
+*U = {a,b}*
 
-Para os predicados, podemos definir os conjuntos que obedecem às fórmulas literais que aparecem no caminho que ficou aberto. Pela árvore, sabemos que $F(a),G(b),\neg G(a), \neg F(b)$; assim, fica simples definir, para os predicados, os seguintes conjuntos: $F={a}$ e $G={b}$. Confira você se um modelo minimalista como esse não faz as premissas verdadeiras e a conclusão falsa! É só considerar $a$ sendo uma girafa, e $b$ uma pessoa que toma uísque.
+Para os predicados, podemos definir os conjuntos que obedecem às fórmulas literais que aparecem no caminho que ficou aberto. Pela árvore, sabemos que *F(a),G(b),¬G(a), ¬F(b)*; assim, fica simples definir, para os predicados, os seguintes conjuntos: *F={a}* e *G={b}*. Confira você se um modelo minimalista como esse não faz as premissas verdadeiras e a conclusão falsa! É só considerar *a* sendo uma girafa, e *b* uma pessoa que toma uísque.
 
 ![arvore_pred/giraffe.png](arvore_pred/giraffe.png)
 
