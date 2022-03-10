@@ -27,7 +27,7 @@ A primeira regra pra olhar -- por ser mais fácil -- é a tentativa de expandir 
 
 ![arvore_pred/t1.png](arvore_pred/t1.png)
 
-Aqui não tem muito o que pensar, pois estamos simplesmente concluindo que todos os elementos de um conjunto não possuem determinada propriedade, ao assumir que não há nenhum elemento desse conjunto com essa propriedade (considerando <img src="https://render.githubusercontent.com/render/math?math=\alpha (x)">) uma fórmula bem formada qualquer em que x é a única variável livre).
+Aqui não tem muito o que pensar, pois estamos simplesmente concluindo que todos os elementos de um conjunto não possuem determinada propriedade, ao assumir que não há nenhum elemento desse conjunto com essa propriedade (considerando *a(x)* uma fórmula bem formada qualquer em que x é a única variável livre).
 
 Vamos agora para a regra de quantificador existencial não-negado. Nesta, vale prestar atenção na manipulação de variáveis que precisamos fazer.
 
@@ -41,11 +41,11 @@ Vamos ver um exemplo, com uma fórmula no topo da árvore:
 
 ![arvore_pred/t4.png](arvore_pred/t4.png)
 
-Até aqui ok. Falta aqui então tentar aplicar a regra novamente para *∃x ¬F(x). E se fizermos isso aqui?
+Até aqui ok. Falta aqui então tentar aplicar a regra novamente para *∃x ¬F(x)*. E se fizermos isso aqui?
 
 ![arvore_pred/t5.png](arvore_pred/t5.png)
 
-Assim a árvore resulta em uma fómrula insatisfazível, por causa da contradição. No entanto, o problema aqui é que a constante *a* já tinha sido usada, tornando essa aplicação de regra incorreta!  No contexto de uma regra beta, no entanto, podemos usar a mesma constante, no caso de caminhos alternativos. O exemplo abaixo é um desenvolvimento correto.
+Assim a árvore resulta em uma fórmula insatisfazível, por causa da contradição. No entanto, o problema aqui é que a constante *a* já tinha sido usada, tornando essa aplicação de regra incorreta!  No contexto de uma regra beta, no entanto, podemos usar a mesma constante, no caso de caminhos alternativos. O exemplo abaixo é um desenvolvimento correto.
 
 ![arvore_pred/t6.png](arvore_pred/t6.png)
 
@@ -56,7 +56,7 @@ De forma similar, a regra mais fácil transforma uma negação de quantificador 
 
 ![arvore_pred/t3.png](arvore_pred/t3.png)
 
-No caso de quantificadores universais sem negação, temos que voltar ao conceito de introdução de variáveis, mas de forma um pouquinho diferente. Vamos usar aqui uma barra */* para indicar variáveis **arbitrárias**, ou seja, variáveis que possam representar **qualquer** elemento de um dado conjunto. 
+No caso de quantificadores universais sem negação, temos que voltar ao conceito de introdução de variáveis, mas de forma um pouquinho diferente. Vamos usar aqui uma barra (/) para indicar variáveis **arbitrárias**, ou seja, variáveis que possam representar **qualquer** elemento de um dado conjunto. 
 
 ![arvore_pred/t7.png](arvore_pred/t7.png)
 
