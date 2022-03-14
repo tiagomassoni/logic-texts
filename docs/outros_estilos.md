@@ -73,3 +73,93 @@ Por fim, quero mostrar o uso de um sistema axiomático para demonstrar um argume
 
 ## Dedução Natural
 
+Já repeti algumas vezes, mas vou voltar novamente a uma mesma ideia: *verificar a validade de um argumento* é o que interessa em lógica. Tudo que você viu e vai ver gira em torno desta mesma tarefa. Um argumento informal poderia ser escrito assim:
+
+    O programa calcula o número de disciplinas cursadas e calcula o CRE do aluno. O programa foi feito em Python. Portanto, o programa calcula o CRE do aluno e foi feito em Python.
+
+Poderíamos codificar este argumento da seguinte forma, usando lógica proposicional:
+
+* Primeira premissa: d ∧ c
+* Segunda premissa: p
+* Conclusão: c ∧ p
+
+Com a intervenção humana, podemos verificar um argumento por **demonstração**, muitas vezes de forma mais simples. 
+Como provador, seu objetivo é transformar as premissas na conclusão, através de **transformações sintáticas** corretas. Essas transformações são corretas se seguirem a aplicação da mesma ideia que usamos em métodos axiomáticos -- regras de inferência, que garantem a consistência das fórmulas resultantes da transformação de verdades anteriores.
+O estilo de prova chamado **Dedução Natural** é similar na ideia de gerar novas fórmulas consistentes com as anteriores; a diferença crucial é a dedução natural é mais aplicável, com apenas um sistema por linguagem, com regras definidas *por conectivo*. Além disso, apenas em sistemas naturais podemos fazer hipóteses temporárias (**caixas**), com essas hipóteses possivelmente sendo dispensada (*discharged*) quando o propósito da hipótese for atingido. Mais em exemplos em breve.
+
+Este é um sistema de prova que reflete melhor nossa prática rotineira de raciocínio, por isso o chamamos de **Natural**. Iniciar com as premissas, ir gerando novas proposições, até chegarmos no resultado do raciocínio, a conclusão. Ao aplicar essas regras às premissas, esperamos que chegaremos a mais algumas fórmulas, e se aplicarmos mais regras a estas, em algum momento chegaremos na fórmula da conclusão.
+
+Um sistema de dedução natural não possui axiomas. As regras são organizadas por conectivo, divididas entre regras de *introdução* e regras de *eliminação*. Vamos iniciar com as duas regras referentes à conjunção:
+
+![outros_estilos/t7.png](outros_estilos/t7.png)
+
+Uma regra deve ser lida de cima para baixo; acima do traço, temos as fórmulas de entrada da regra, necessariamente já conhecidas como verdadeiras, e abaixo do traço, temos a fórmula resultante da regra. Na regra de introdução da conjunção <img src="https://render.githubusercontent.com/render/math?math=\land_i">, se forem provadas como verdadeiras as fórmulas <img src="https://render.githubusercontent.com/render/math?math=\phi ,\psi">, podemos deduzir a conjunção entre os dois. Já na eliminação da conjunção (<img src="https://render.githubusercontent.com/render/math?math=\land_e">), basta que se tenha como verdadeira uma conjunção de duas fórmulas, qualquer uma delas pode ser tomada como verdade, já que as duas são verdadeiras ao mesmo tempo. 
+
+Você deve estar achando essas regras bem fáceis, e nisso concordo com você. Ainda assim, saber aplicá-las exige um pouco mais de habilidade, e é neste ponto que eu quero exercitar a habilidade de dedução. Vamos voltar ao argumento de exemplo, reescrevendo-o para a utilização da dedução natural.
+
+<img src="https://render.githubusercontent.com/render/math?math=d \land c,p \vdash c \land p">
+
+ Supondo que temos que realizar a prova de validade deste argumento, vamos montar o esquema de dedução, que é o primeiro passo para uma prova correta e organizada. Isso é importante, pois demonstrações são feitas para convencer outras pessoas por isso têm que ser precisas e claras. A primeira coisa é copiar as premissas, uma por linha numerada.
+
+![outros_estilos/t8.png](outros_estilos/t8.png)
+
+A ideia aqui é usar estas duas linhas como origem para transformações que vão gerar a conclusão. Acho importante você deixar um espaço e já *escrever a conclusão*, na última linha, mesmo sem saber ainda qual o número desta linha na prova completa.
+
+![outros_estilos/t9.png](outros_estilos/t9.png)
+
+Essa prática ajuda a saber onde queremos chegar, facilitando a definição da estratégia a utilizar. Olhando para a conclusão, você deve se perguntar: ``Qual o caminho mais apropriado para chegar a este tipo de conclusão?'' O que chamo de tipo de conclusão consiste na estrutura da fórmula. Neste caso, a conclusão tem uma estrutura de conjunção -- este é o conectivo principal da fórmula.
+
+Voltando à nossa dedução, qual seria a melhor forma de chegar a uma conjunção? 
+Que regras deveríamos aplicar para chegar lá? Como só vimos duas regras até agora, é simples:  para chegar a esta conjunção (*c ∧ p*), precisamos chegar a cada um dos lados da conjunção isoladamente, para no final juntar os dois no resultado, utilizando a regra <img src="https://render.githubusercontent.com/render/math?math=\land_i">. Você poderia já colocar estes dois lados nas linhas acima da conclusão, assim:
+
+![outros_estilos/t10.png](outros_estilos/t10.png)
+
+Agora nosso trabalho se resume a tentar deduzir *c e p* isoladamente. A proposição *p* já é premissa, então ela já é válida nesta dedução, por isso vou apagar.
+
+![outros_estilos/t11.png](outros_estilos/t11.png)
+
+O problema que resta é chegar ao *c* isolado. Você tem agora que olhar as premissas para tentar delas derivar o resultado desejado. Veja que na Linha 1 temos a conjunção cujo um dos lados é exatamente *c*, que eu posso extrair usando a regra de eliminação. A criação da nova linha exige uma justificativa, que fica do lado direito, incluindo o nome da regra e a linha de onde vêm as entradas da regra (nesta regra, só há uma entrada, a Linha 1):
+
+![outros_estilos/t12.png](outros_estilos/t12.png)
+
+Temos os dois lados isolados na dedução, assim você pode finalizar a prova com o último passo de introduzir a conjunção. Como a linha já está colocada, falta apenas justificá-la como resultado.
+
+![outros_estilos/t13.png](outros_estilos/t13.png)
+
+Perceba que duas linhas foram usadas na justificativa, já que esta regra precisa de duas entradas (cada lado da conjunção). Um sistema de dedução natural para a lógica de predicados completo possui um número bem razoável de regras, pois cada conectivo e quantificador define duas regras, introdução e eliminação. Vamos nos limitar aqui a discutir regras para implicação, só para dar um gostinho de como se faz dedução com caixas.
+
+Para a implicação, começamos do jeito mais simples, a sua eliminação (deixemos a introdução para depois, já que precisaremos de um conceito novo). A eliminação da implicação é definida assim:
+
+![outros_estilos/t14.png](outros_estilos/t14.png)
+
+A eliminação da implicação nada mais é que a regra que já vimos no sistema axiomático, *Modus Ponens* (Modo de Afirmar). Nela, se sabemos ser verdade a própria implicação, e sabemos ser verdade seu lado esquerdo, com certeza o lado direito é verdadeiro.   Uma outra regra que vamos adicionar é análoga a esta: *Modus Tolens* (Modo de Negar), que permite deduzir a fórmula do lado esquerdo de uma implicação quando tem-se como verdadeira a **negação da fórmula do lado direito**.
+
+![outros_estilos/t15.png](outros_estilos/t15.png)
+
+Aqui tem uma novidade: teremos agora como \textit{introduzir} uma implicação onde não existe uma. Lembre-se de que uma fórmula como *p→q* não afirma *p* nem *q*. Criar uma implicação em uma dedução exige que criemos \textit{hipóteses temporárias}, cujo efeito (escopo) é limitado a apenas um pedaço da dedução -- um trecho dentro da lista ordenada de linhas numeradas. Este trecho temporário é representado por uma espécie de quadro de contorno sólido, uma *caixa*.
+
+Vamos trabalhar em cima de um exemplo de argumento:
+
+<img src="https://render.githubusercontent.com/render/math?math=\neg j\rightarrow \neg c \vdash  c\rightarrow \neg\neg j
+">
+
+Vou começar escrevendo a premissa, seguida da conclusão no final. O espaço em branco entre elas será nossa área de trabalho, onde vamos pensar a estratégia.
+
+![outros_estilos/t16.png](outros_estilos/t16.png)
+
+Nosso objetivo é chegar numa implicação, mas ela não existe na dedução ainda, vamos assim precisar criar de algum lugar. Vamos criar as condições para que uma implicação possa ser deduzida: vou **assumir como verdadeira** a fórmula esquerda da implicação desejada *c*. Não quer dizer que ela seja, talvez não seja, mas vou assumir como uma hipótese; já que não sabemos se ela existe, então a colocaremos dentro de um espaço temporário, onde as fórmulas anteriores também são verdadeiras, junto com essa hipótese. No final da caixa, queremos que esta hipótese seja dispensada (*discharged*).
+
+![outros_estilos/t17.png](outros_estilos/t17.png)
+
+É importante pensar que a caixa é uma sub-dedução dentro da dedução maior; neste caso, podemos usar Linhas 1 e 2 como verdade para a dedução dentro da caixa. Neste caso, se conseguirmos deduzir, no final dela, o lado direito da implicação desejada (*¬¬j*), chegamos à conclusão que queríamos; partimos, assumindo o lado direito, numa dedução que leva ao lado direito, ou seja,**o lado direito foi realmente implicado a partir do lado esquerdo**! 
+
+![outros_estilos/t18.png](outros_estilos/t18.png)
+
+Perceba que nosso problema da caixa para fora está resolvido, basta agora resolver o miolo da caixa. Precisamos então, a partir das Linhas 1 e 2, chegar em *¬¬j*. Mas, veja, o final da caixa, onde queremos chegar, é justamente o lado esquerdo negado da implicação da Linha 1! Se eu perguntar qual a estratégia para chegar na negação do lado esquerdo de uma implicação, você vai rapidamente me responder que precisamos usar Modus Tolens, de algum jeito. Para isso, precisamos negar duplamente *c*, e para isso existem regras triviais para introdução e eliminação da dupla negação.
+
+![outros_estilos/t19.png](outros_estilos/t19.png)
+
+Caixas como essas são usadas em regras para disjunção, negação e contradição, além de quantificadores; se tiver curiosidade, leia textos completos sobre dedução natural em:
+
+* Dedução para lógica proposicional: [outros_estilos/deducao-proposicional.pdf](outros_estilos/deducao-proposicional.pdf)
+* Dedução para lógica de predicados: [outros_estilos/deducao-predicados.pdf](outros_estilos/deducao-predicados.pdf)
