@@ -107,7 +107,7 @@ Com todos os caminhos fechados, a fórmula original é então válida (uma tauto
 
 Antes de voltar a trabalhar com argumentos na árvore, temos que discutir mais sobre propriedades dessa árvore na presença de quantificadores, principalmente por causa dos elementos novos que precisam ser manipulados: constantes e variáveis.
 
-Só podemos tirar conclusões sobre os caminhos de uma árvore quando ela for considerada **finalizada**, que se dá quando todos os caminhos estiverem fechados ou **saturados**. Um caminho saturado ocorre quando todas as regras aplicável foi usada.  Vamos para uma definição um pouco mais detalhada.
+Só podemos tirar conclusões sobre os caminhos de uma árvore quando ela for considerada **finalizada**, que se dá quando todos os caminhos estiverem fechados ou **saturados**. Um caminho saturado ocorre quando todas as regras aplicáveis foram usadas.  Vamos para uma definição um pouco mais detalhada.
 
 Um caminho está saturado se, e somente se:
 * todas as fórmulas do caminho - exceto literais e quantificações universais - foram sujeitas a aplicação de regras;
