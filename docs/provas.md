@@ -1,4 +1,7 @@
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 # Provando argumentos com árvores
+
 
 Árvores podem ter muitas utilidades, dentro da mesma ideia de aumentar a eficiência da verificação das fórmulas. Deixa eu começar aqui com mais um uso interessante: **verificar se duas ou mais fórmulas são satisfazíveis se consideradas ao mesmo tempo**. Como diria Nietzsche, se são satisfazíveis juntas, imagina juntas!
 
