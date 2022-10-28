@@ -10,7 +10,7 @@ A árvore sempre nos responde um mesmo tipo de pergunta: **se todas as proposiç
 
 Quero resgatar agora o conceito de **argumento**, trazendo-o pra esse mundo de árvores. Lembra, né, argumento, aquele conjunto de fórmulas com uma conclusão e zero ou mais premissas? Pois é, argumento é um conjunto de fórmulas. Conseguimos provar se um argumento é válido com a nossa amiga tabela-verdade, através do conceito de vinculação semântica (todas as premissas sendo verdadeiras em uma interpretação obriga a conclusão a ser verdadeira, sem isso o argumento é inválido). Resgatando um exemplo aqui: 
 
-$A \rightarrow B, B \rightarrow C \models A \rightarrow C$
+$$A \rightarrow B, B \rightarrow C \models A \rightarrow C$$
 
 Será que a árvore pode nos ser útil na hora de provar um argumento como este, nos salvando da ineficiência da tabela-verdade? Pior que sim.
 
