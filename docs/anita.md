@@ -12,7 +12,7 @@ Um tableaux para provar a validade do argumento acima:
 
 Ok, acredito em você, já sabe como fazer um tableaux. Mas eu sei que você quer alguma coisa que ajude a checar se está tudo bem com a sua árvore de Tableux, não é? Eu também queria. E olha só o que tem disponível, um CHECADOR de tableaux.
 
-Eis que você pode ir para a ferramenta online ANITA, visitando o link aqui:  <https://sistemas.quixada.ufc.br/anita>. Nela, você escreve o seu tableaux, usando a notação da ferramenta, e ela te diz se o tableaux representa uma prova correta de argumento.
+Eis que você pode ir para a ferramenta online ANITA, visitando o link aqui:  <https://sistemas.quixada.ufc.br/anita>. A ferramenta está sendo desenvolvida pelo Prof. Davi Romero Vasconcelos, da UFC. Na ferramenta, você escreve o seu tableaux, usando a notação da ferramenta, e ela te diz se o tableaux representa uma prova correta de argumento.
 
 Eis a interface, sem muito segredo:
 
@@ -44,7 +44,32 @@ Aqui outro exemplo de tableaux para lógica proposicional, que trouxe do manual 
 
 ## Lógica de predicados
 
+As regras para eliminação de quantificadores são, aqui, aplicadas de uma forma um pouquinho diferente, principalmente para o caso da negação. Quando T está na frente do para-todo ou do existe, a regra fica igual a que vimos: removemos o existe com uma variável nova, e o para-todo com uma variável qualquer arbitrária.
 
+![anita/7.png](anita/7.png)
+
+Já quando há uma negação, você deve pular o estágio de troca de quantificador, já eliminando tudo de uma vez. No caso do para-todo negado, já trocamos pela negação da parte interna, com variável nova (ou seja, uma eliminação de existe); o mesmo ocorre com a negação do existe, mas levando a uma fórmula negada com uma variável arbitrária qualquer.
+
+![anita/8.png](anita/8.png)
+
+Vamos usar como exemplo aqui o seguinte argumento, onde *s* é uma constante do conjunto universo:
+
+*∀x(H(x)→M(x)), H(s)⊧ M(s)*
+
+O tableaux para prova a validade ficaria assim (já usando a notação do ANITA, com F no lugar da negação):
+
+![anita/9.png](anita/9.png)
+
+
+
+
+## Outros link úteis
+
+Aula do Prof. Adolfo Neto (UTFPR) sobre ANITA: <https://youtu.be/CbjYClMLiFI>
+
+Artigo original sobre ANITA: <https://arxiv.org/abs/2303.05864>
+
+Canal do Prof. Davi no Youtube: <https://www.youtube.com/@davivasconcelos9843>
 
 
 
