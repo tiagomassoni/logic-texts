@@ -16,7 +16,7 @@ Sendo justo com os criadores dos formulários, há um problema aí mais sério d
 
 Mais um exemplo de como a dedução lógica pode ser sutil. Vamos considerar o seguinte problema:
 
-**Estou pensando em uma das duas cores (cinza ou branco) e em uma das duas formas (losango ou círculo). Se um símbolo tem a cor que eu estou pensando, ou a forma que estou pensando, ou ambos, então eu o aceito, senão eu o rejeito. Eu aceito o losango cinza. Qual desses símbolos abaixo eu aceito ou rejeito?**
+**Estou pensando em uma das duas cores (cinza ou branco) e em uma das duas formas (losango ou círculo). Se um símbolo tem a cor que eu estou pensando, ou a forma que estou pensando, ou ambos, então eu o aceito, senão eu o rejeito. Eu aceito o losango cinza. Eu devo rejeitar quais dos símbolos abaixo?**
 
 ![intro/Untitled.png](intro/Untitled.png)
 
