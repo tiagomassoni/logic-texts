@@ -10,8 +10,10 @@
 
 5. [Formas Normais: motivação](https://tiagomassoni.github.io/logic-texts/formas-normais.html)
 
-6. [Provas de Argumentos para Lógica de Predicados](https://tiagomassoni.github.io/logic-texts/provas_predicados.html)
+6. [Introdução à Lógica de Predicados](https://tiagomassoni.github.io/logic-texts/predicados.html)
 
-7. [Outros Métodos de Prova](https://tiagomassoni.github.io/logic-texts/outros_estilos.html)
+7. [Provas de Argumentos para Lógica de Predicados](https://tiagomassoni.github.io/logic-texts/provas_predicados.html)
+
+8. [Outros Métodos de Prova](https://tiagomassoni.github.io/logic-texts/outros_estilos.html)
 
 
