@@ -38,7 +38,7 @@ A linguagem que nos permite esse raciocínio é conhecida como *lógica de predi
 
 Você deve reconhecer com facilidade a figura abaixo, que conhecemos como diagrama de Venn.
 
-<img src="predicados/t3.jpg" height="200">
+<img src="predicados/t3.jpg" height="300">
 
 *U* representa um conjunto qualquer de *objetos*, o que vamos chamar, por convenção, de *conjunto universo*, que contém todos os objetos possíveis dentro desse universo; neste caso decidi que meu universo é qualquer objeto, mas eu poderia dizer que meu universo é mais restrito, por exemplo o universo de todos os países, ou todos os veículos (depende do problema em questão). Assumindo todos os objetos possíveis, dentro desse conjunto universo existe o conjunto *Pessoas*, considerando que uma parte dos objetos do universo são pessoas. E dentro das pessoas, definimos um conjunto específico dessas pessoas (um *subconjunto*) que são os filósofos. Podemos identificar que um objeto específico dentro desse subconjunto representa o filósofo Aristóteles, aquele que nos interessa. 
 
@@ -176,7 +176,7 @@ Vamos para a letra f., que diz algo um pouco diferente: pelo menos um programa �
 
 Aqui a conjunção está correta, pois pelo menos um objeto programa está nesses dois subconjunto. Aliás, veja que interessante desenhar as duas situações codificados em diagramas de Venn:
 
-<img src="predicados/t5.jpg" height="150">
+<img src="predicados/t5.jpg" height="270">
 
 A partir disso, podemos definir boas analogias entre *implicação e subconjunto*, e *conjunção e intersecção*. Um outro macete para lembrar, quase sempre quantificador *universal vai com implicação* e quantificar *existencial vai com conjunção*. Nem sempre, mas quase sempre. É uma boa dica.  
 

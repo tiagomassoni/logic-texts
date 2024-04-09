@@ -35,7 +35,7 @@ Vamos agora para a regra de quantificador existencial não-negado. Nesta, vale p
 
 Aqui estamos considerando um *a*zinho maroto, uma **nova constante** na árvore, um nome que não aparece em lugar algum no caminho atual. A convenção é indicar essa nova constante no lado direito, ao lado do *check*, facilitando a leitura. 
 
-Tentando nos convencer de que a regra é correta de acordo com a nossa definição de árvore, suponha que temos um modelo *M* no qual <img src="https://render.githubusercontent.com/render/math?math=\exists x \alpha (x)"> é verdade. Assim, com certeza, esse modelo possui um elemento do conjunto considerado que faz *α(a/x)* ficar verdadeiro (considerando aqui *a/x* a constante *a* tomando o lugar da variável x).
+Tentando nos convencer de que a regra é correta de acordo com a nossa definição de árvore, suponha que temos um modelo *M* no qual ∃xα(x) é verdade. Assim, com certeza, esse modelo possui um elemento do conjunto considerado que faz *α(a/x)* ficar verdadeiro (considerando aqui *a/x* a constante *a* tomando o lugar da variável x).
 
 Vamos ver um exemplo, com uma fórmula no topo da árvore:
 
@@ -83,7 +83,7 @@ Depois disso, retorna para o primeiro passo, se for o caso. Essa heurística ten
 
 ![arvore_pred/quadro.png](arvore_pred/quadro.png)
 
-Vamos ver um exemplo, para a fórmula <img src="https://render.githubusercontent.com/render/math?math=[\exists x F(x) \wedge \forall x(F(x) \rightarrow G(x))]\rightarrow \exists G(x)">. Queremos verificar se ela é válida, portanto vamos verificar se sua negação é insatisfazível. A partir dela, a primeira regra alfa separa os dois lados da negação da implicação.
+Vamos ver um exemplo, para a fórmula [∃xF(x)⋀ ∀x(F(x)⟶G(x))]⟶∃xG(x). Queremos verificar se ela é válida, portanto vamos verificar se sua negação é insatisfazível. A partir dela, a primeira regra alfa separa os dois lados da negação da implicação.
 
 ![arvore_pred/t9.png](arvore_pred/t9.png)
 
@@ -130,7 +130,7 @@ Para isso, precisamos aplicar a regra universal novamente para *∀x G(x)*, usan
 
 Vamos aos exemplos de argumentos com lógica de predicados, trabalhando na prova baseada em árvores da sua validade (ou contra-exemplo, no caso de argumentos inválidos). Vamos começar pelo seguinte argumento: 
 
-<img src="https://render.githubusercontent.com/render/math?math=\exists F(x), \exists G(x)  \models \exists (F(x)\wedge G(x))$">.
+∃xF(x), ∃xG(x) ⊧  ∃x(F(x)⋀ G(x))
 
 Tá meio estranho, né? se alguém é girafa, e também alguém bebe uísque, podemos concluir que existe uma girafa que bebe uísque? Pois é, jeito de argumento inválido, mas vamos provar isso. Na árvore, lembrando, colocamos as premissas junto com a negação da conclusão.
 
