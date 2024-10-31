@@ -1,6 +1,6 @@
 # Introdução e Histórico
 
-## The Logical Song (Supertramp)
+**The Logical Song (Supertramp)**
 
 **Álbum: Breakfast in America, 1979**
 
@@ -35,7 +35,7 @@ Please tell me what we've learned?
 Who I am, who I am, who I am*
 
 
-## A Canção Lógica (Supertramp)
+**A Canção Lógica (Supertramp)**
 
 Quando eu era jovem, parecia que a vida era tão maravilhosa  
 Um milagre, oh, era linda, mágica  
@@ -74,7 +74,7 @@ As pessoas em geral assumem que a lógica é inata, como se fosse uma ferramenta
 - A lógica possui *armadilhas*, das quais nem a melhor capacidade cognitiva humana consegue escapar; essas "cascas de banana retóricas" já eram conhecidas dos gregos há pelo menos uns 2200 anos – os primeiros que estudaram a lógica de forma sistemática;
 - A aplicação da lógica na *teoria da informação* (Séculos XIX e XX) abriu o caminho para a revolução digital do Século XXI; a formalização de ferramentas matemáticas imprescindíveis para nosso conhecimento e a posterior digitalização da informação deram início à era dos computadores.
 
-Costumo pensar na lógica, para facilitar, como um *processo*. Percebemos como a lógica se aplica ao nosso dia-a-dia se prestarmos atenção aos passos que nossa mente realiza rotineiramente. Pensa aí na situação corriqueira que se dá na sua cama, de manhã, no exato momento em que seu despertador toca (Duvido que você acorda sozinha(o), toda(o) serelepe, sem despertador!). Mais um dia de aulas e atividades, aquelas com as quais a docência maquiavélica do curso de Ciência da Computação insiste em te abarrotar. Já neste exato momento, você tem que tomar uma decisão, concorda? *Levantar ou não, eis a questão!?!* Então, você, Hamlet *da geração Y,* o que leva em consideração para tomar essa decisão? Você sabe que existem alguns **fatos** e você, a partir deles, pode **deduzir** certas **consequências. (**Eu não tive o entediante trabalho de colocar essas palavras em negrito à toa, hein? Elas devem ser lembradas como palavras-chave.)
+Costumo pensar na lógica, para facilitar, como um *processo*. Percebemos como a lógica se aplica ao nosso dia-a-dia se prestarmos atenção aos passos que nossa mente realiza rotineiramente. Pensa aí na situação corriqueira que se dá na sua cama, de manhã, no exato momento em que seu despertador toca (Duvido que você acorda sozinha(o), toda(o) serelepe, sem despertador!). Mais um dia de aulas e atividades, aquelas com as quais a docência maquiavélica do curso de Ciência da Computação insiste em te abarrotar. Já neste exato momento, você tem que tomar uma decisão, concorda? *Levantar ou não, eis a questão!?!* Então, você, Hamlet *da geração Y,* o que leva em consideração para tomar essa decisão? Você sabe que existem alguns **fatos** e você, a partir deles, pode **deduzir** certas **consequências**. (Eu não tive o entediante trabalho de colocar essas palavras em negrito à toa, hein? Elas devem ser lembradas como palavras-chave.)
 
 Por exemplo, você sabe que, se não levantar, não vai conseguir assistir àquela aula (fato), e se não assistir a ela, pode levar falta e, principalmente, perder o assunto que será discutido e se enrolar depois pra fazer a atividade, resultando em menores chances de ser aprovado (consequências)! Ao mesmo tempo, pode ser que o fato seja diferente, e naquele dia o assunto não seja tão importante, e neste caso as consequências de não se levantar e dormir mais não sejam tão danosas, o que pode fazer você se decidir por ficar na cama (botão soneca eu te amo!). Claro, pode ser que seu vizinho e sua furadeira implacável o façam decidir o oposto, mas aí são outros fatos e consequências em ação.
 
