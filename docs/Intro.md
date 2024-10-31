@@ -1,70 +1,90 @@
 # Introdução e Histórico
 
 **The Logical Song (Supertramp)**  
-**Álbum: Breakfast in America, 1979**
+**A Canção Lógica**  
+**Álbum: Breakfast in America, 1979**  
 
-*When I was young, it seemed that life was so wonderful   
-A miracle, oh, it was beautiful, magical  
-And all the birds in the trees, well they'd be singing so happily  
-Oh, joyfully, oh, playfully watching me  
-But then they sent me away to teach me how to be sensible  
-Logical, oh, responsible, practical  
-Then they showed me a world where I could be so dependable  
-Oh, clinical, oh, intellectual, cynical  
-There are times when all the world's asleep  
-The questions run too deep  
-For such a simple man  
-Won't you please, please tell me what we've learned?  
-I know it sounds absurd  
-Please tell me who I am*
-
-*I said, now, watch what you say, they'll be calling you a radical  
-A liberal, oh, fanatical, criminal  
-Oh, won't you sign up your name? We'd like to feel you're acceptable  
-Respectable, oh, presentable, a vegetable  
-Oh, take, take, take it, yeah*
-
-*But at night, when all the world's asleep  
-The questions run so deep  
-For such a simple man  
-Won't you please (oh, won't you tell me)  
-Please tell me what we've learned?  
-(Can you hear me?) I know it sounds absurd  
-(Oh, won't you tell me) please tell me who I am  
-Who I am, who I am, who I am*
-
-
-**A Canção Lógica (Supertramp)**
-
+*When I was young, it seemed that life was so wonderful*  
 Quando eu era jovem, parecia que a vida era tão maravilhosa  
+
+*A miracle, oh, it was beautiful, magical*  
 Um milagre, oh, era linda, mágica  
+
+*And all the birds in the trees, well they'd be singing so happily*  
 E todos os pássaros nas árvores, bem, eles cantavam tão felizes  
+
+*Oh, joyfully, oh, playfully watching me*  
 Oh, alegremente, oh, brincando, me observando  
+
+*But then they sent me away to teach me how to be sensible*  
 Mas então me mandaram embora para me ensinar a ser sensato  
+
+*Logical, oh, responsible, practical*  
 Lógico, oh, responsável, prático  
+
+*Then they showed me a world where I could be so dependable*  
 Então me mostraram um mundo onde eu poderia ser tão confiável  
+
+*Oh, clinical, oh, intellectual, cynical*  
 Oh, clínico, oh, intelectual, cínico  
+
+*There are times when all the world's asleep*  
 Há momentos em que o mundo inteiro está dormindo  
+
+*The questions run too deep*  
 As perguntas são profundas demais  
+
+*For such a simple man*  
 Para um homem tão simples  
+
+*Won't you please, please tell me what we've learned?*  
 Por favor, me diga o que aprendemos?  
+
+*I know it sounds absurd*  
 Eu sei que parece absurdo  
+
+*Please tell me who I am*  
 Por favor, me diga quem eu sou  
 
+*I said, now, watch what you say, they'll be calling you a radical*  
 Eu disse, agora, cuidado com o que você diz, eles vão te chamar de radical  
+
+*A liberal, oh, fanatical, criminal*  
 Um liberal, oh, fanático, criminoso  
+
+*Oh, won't you sign up your name? We'd like to feel you're acceptable*  
 Oh, não quer assinar seu nome? Gostaríamos de sentir que você é aceitável  
+
+*Respectable, oh, presentable, a vegetable*  
 Respeitável, oh, apresentável, um vegetal  
+
+*Oh, take, take, take it, yeah*  
 Oh, leve, leve, leve, sim  
 
+*But at night, when all the world's asleep*  
 Mas à noite, quando o mundo inteiro dorme  
+
+*The questions run so deep*  
 As perguntas são tão profundas  
+
+*For such a simple man*  
 Para um homem tão simples  
+
+*Won't you please (oh, won't you tell me)*  
 Por favor (oh, você não vai me dizer)  
+
+*Please tell me what we've learned?*  
 Por favor, me diga o que aprendemos?  
-(Você pode me ouvir?) Eu sei que parece absurdo  
-(Oh, você não vai me dizer) por favor, me diga quem eu sou  
-Quem eu sou, quem eu sou, quem eu sou  
+
+*(Can you hear me?) I know it sounds absurd*  
+*(Você pode me ouvir?) Eu sei que parece absurdo*  
+
+*(Oh, won't you tell me) please tell me who I am*  
+*(Oh, você não vai me dizer) por favor, me diga quem eu sou*  
+
+*Who I am, who I am, who I am*  
+Quem eu sou, quem eu sou, quem eu sou
+
 
 ## Introdução
 
