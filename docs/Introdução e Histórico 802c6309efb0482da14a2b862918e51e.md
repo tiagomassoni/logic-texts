@@ -1,5 +1,74 @@
 # Introdução e Histórico
 
+## The Logical Song (Supertramp)
+
+**Álbum: Breakfast in America, 1979**
+
+*When I was young, it seemed that life was so wonderful   
+A miracle, oh, it was beautiful, magical  
+And all the birds in the trees, well they'd be singing so happily  
+Oh, joyfully, oh, playfully watching me  
+But then they sent me away to teach me how to be sensible  
+Logical, oh, responsible, practical  
+Then they showed me a world where I could be so dependable  
+Oh, clinical, oh, intellectual, cynical  
+There are times when all the world's asleep  
+The questions run too deep  
+For such a simple man  
+Won't you please, please tell me what we've learned?  
+I know it sounds absurd  
+Please tell me who I am*
+
+*I said, now, watch what you say, they'll be calling you a radical  
+A liberal, oh, fanatical, criminal  
+Oh, won't you sign up your name? We'd like to feel you're acceptable  
+Respectable, oh, presentable, a vegetable  
+Oh, take, take, take it, yeah*
+
+*But at night, when all the world's asleep  
+The questions run so deep  
+For such a simple man  
+Won't you please (oh, won't you tell me)  
+Please tell me what we've learned?  
+(Can you hear me?) I know it sounds absurd  
+(Oh, won't you tell me) please tell me who I am  
+Who I am, who I am, who I am*
+
+
+## A Canção Lógica (Supertramp)
+
+Quando eu era jovem, parecia que a vida era tão maravilhosa  
+Um milagre, oh, era linda, mágica  
+E todos os pássaros nas árvores, bem, eles cantavam tão felizes  
+Oh, alegremente, oh, brincando, me observando  
+Mas então me mandaram embora para me ensinar a ser sensato  
+Lógico, oh, responsável, prático  
+Então me mostraram um mundo onde eu poderia ser tão confiável  
+Oh, clínico, oh, intelectual, cínico  
+Há momentos em que o mundo inteiro está dormindo  
+As perguntas são profundas demais  
+Para um homem tão simples  
+Por favor, me diga o que aprendemos?  
+Eu sei que parece absurdo  
+Por favor, me diga quem eu sou  
+
+Eu disse, agora, cuidado com o que você diz, eles vão te chamar de radical  
+Um liberal, oh, fanático, criminoso  
+Oh, não quer assinar seu nome? Gostaríamos de sentir que você é aceitável  
+Respeitável, oh, apresentável, um vegetal  
+Oh, leve, leve, leve, sim  
+
+Mas à noite, quando o mundo inteiro dorme  
+As perguntas são tão profundas  
+Para um homem tão simples  
+Por favor (oh, você não vai me dizer)  
+Por favor, me diga o que aprendemos?  
+(Você pode me ouvir?) Eu sei que parece absurdo  
+(Oh, você não vai me dizer) por favor, me diga quem eu sou  
+Quem eu sou, quem eu sou, quem eu sou  
+
+## Introdução
+
 As pessoas em geral assumem que a lógica é inata, como se fosse uma ferramenta com a qual viemos ao mundo. Como se nosso cérebro já viesse assim de fábrica. A gente sempre reclama da fala de alguém, usando a expressão "não tem lógica", presumindo que esta outra pessoa deveria saber disso de antemão, sem ter estudado qualquer outra coisa. Mas não é bem assim. Além de ser necessário – pois é muito comum nos perdermos na lógica dos argumentos que ouvimos ou lemos por aí –, o estudo da lógica é interessante por dois motivos principais:
 
 - A lógica possui *armadilhas*, das quais nem a melhor capacidade cognitiva humana consegue escapar; essas "cascas de banana retóricas" já eram conhecidas dos gregos há pelo menos uns 2200 anos – os primeiros que estudaram a lógica de forma sistemática;
