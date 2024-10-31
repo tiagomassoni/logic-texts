@@ -1,7 +1,6 @@
 # Introdução e Histórico
 
-**The Logical Song (Supertramp)**
-
+**The Logical Song (Supertramp)**  
 **Álbum: Breakfast in America, 1979**
 
 *When I was young, it seemed that life was so wonderful   
