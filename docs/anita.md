@@ -18,7 +18,7 @@ Eis a interface, sem muito segredo:
 
 ![anita/1.png](anita/1.png)
 
-Do lado esquerdo, escrevemos o tableaux, e a ferramento nos dá o feedback do lado direito. Bem simples e direto. O que complica, de início, é que a notação exigida nos deixa indecisos; mas nada que não seja rapidamente adquirido - basta olhar a referência. Vou seguir com o mesmo exemplo, passo a passo. 
+Do lado esquerdo, escrevemos o tableaux, e a ferramenta nos dá o feedback do lado direito. Bem simples e direto. O que complica, de início, é que a notação exigida nos deixa indecisos; mas nada que não seja rapidamente adquirido - basta olhar a referência. Vou seguir com o mesmo exemplo, passo a passo. 
 
 Começo com as premissas e a conclusão. Percebam que coloco a numeração das linhas. Enquanto a letra T na frente da fórmula representa sua afirmação, a letra F representa sua *negação*; *F a -> b* para nós é o mesmo que *¬(a -> b)*. Do lado direito, indicamos premissas com *pre* e a conclusão.
 
