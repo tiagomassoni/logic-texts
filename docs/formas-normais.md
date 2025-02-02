@@ -12,9 +12,12 @@ if (defined(A) || (defined(C) && defined(D)) || defined(B))
 
 Percebam o formato da condição do if; há nele apenas disjunções, e dentro de cada disjunção, apenas conjunções. Uma das respostas que está no site dá uma ideia para a motivação disso:
 
-> Always remember that in many languages both operands of a boolean expression may not be executed if the value of the expression can be determined after evaluating just one of the operands. Such as: </br>
-1: (trueMethod() || falseMethod()) </br>
-2: (falseMethod() || trueMethod()) </br>
+*Always remember that in many languages both operands of a boolean expression may not be executed if the value of the expression can be determined after evaluating just one of the operands. Such as:*
+
+*1: (trueMethod() || falseMethod())*
+
+*2: (falseMethod() || trueMethod())*
+
 In case one only trueMethod() is executed. But in Case 2 both methods are executed. Order can make a big difference.
 
 Sim, a **ordem faz uma diferença** no processamento da condição, deixando a execução mais rápida quando não é necessário processar o restante da fórmula. Lembre-se, a condição do *if* é uma fórmula na lógica proposicional (sem incluir a implicação, normalmente).
