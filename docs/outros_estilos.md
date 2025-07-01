@@ -1,35 +1,40 @@
-# Outros Métodos de Prova em Lógica
+# Outros Sistemas Dedutivos (Lógica Proposicional)
 
-Para o caso da lógica proposicional, vimos dois métodos de prova de propriedades de fórmulas (validade e satisfazibilidade) e argumentos (validade): tabela-verdade e árvores. Para a lógica de predicados, perdemos o poder de usar tabelas-verdade, por estarmos lidando com infinitos modelos em potencial, mas ainda mantemos a possibilidade de utilizar árvores, com novas regras de desenvolvimento.
+Por ora, vimos dois métodos de verificação de propriedades de fórmulas (validade e satisfazibilidade) e argumentos (validade): tabela-verdade e árvores (Tableaux). 
+Em geral o Tableaux Semântico pode ser considerado tanto como um algoritmo (um pouco) mais eficiente que a tabela verdade, mas também um *sistema dedutivo*. Como vimos anteriormente, um sistema dedutivo tem as seguintes características:
 
-Na verdade, vários outros métodos de prova foram desenvolvidos ao longo de história, que funcionam para ambas as lógicas. Neste módulo, faremos um breve passeio por alguns deles, entendendo seus pontos fortes e suas limitações.
+* **Sintaxe Formal**: Possui um conjunto bem definido de símbolos, regras de formação de fórmulas (gramática) e regras de inferência (como manipular os símbolos).
+* **Solidez ou Corretude (Soundness)**: Todas as conclusões que podem ser derivadas dentro do sistema são logicamente válidas. 
+* **Completude (Completeness)**: Todas as conclusões logicamente válidas (tautologias ou vinculações semânticas) podem ser derivadas dentro do sistema.
+* **Decidibilidade** (para Lógica Proposicional): Existe um algoritmo que pode determinar, em um número finito de passos, se uma dada fórmula é uma tautologia ou se um argumento é válido.
 
-Antes de começar, deixa eu revisitar o que devemos entender como **prova formal**. 
-Na lógica, primeiro precisa existir um conjunto específico de símbolos a partir dos quais construímos uma prova — os símbolos de uma linguagem lógica, como as duas que vimos na disciplina, junto com alguns símbolos adicionais para organizar a prova.
+Na verdade, vários outros exemplos de sistemas dedutivos foram desenvolvidos ao longo de história, que funcionam para vários estilos de lógica, clássicas ou não. Neste módulo, faremos um breve passeio por alguns deles, entendendo seus pontos fortes e suas limitações.
+
+Antes de começar, deixa eu revisitar o que devemos entender como **prova formal** em um sistema dedutivo. 
+Na lógica, primeiro precisa existir um conjunto específico de símbolos a partir dos quais construímos uma prova — os símbolos de uma linguagem lógica, como a lógica proposicional, por exemplo, junto com alguns símbolos adicionais para organizar a prova.
 Qualquer sequência desses símbolos pode ser então uma candidata a receber o título de *prova*; pode ainda não ser, dependendo de uma verificação. 
-Segundo, deve haver um *procedimento de decisão* para determinar, dentro de um tempo finito,  se uma sequência candidata a prova é realmente uma prova — algum tipo de algoritmo que recebe a prova candidata como entrada e retorna *sim* ou *não*.  O procedimento deve então ser preciso, para que não haja dúvida sobre a resposta.
+Segundo, deve haver um *procedimento de decisão* para determinar, dentro de um tempo finito, se uma sequência candidata a prova é realmente uma prova — algum tipo de algoritmo que recebe a prova candidata como entrada e retorna *sim* ou *não*.  O procedimento deve então ser preciso, para que não haja dúvida sobre a resposta.
 Desta forma, as provas precisam também ser *finitas*, algo que é intuitivamente correto: nenhum algoritmo pode ser finito verificando algo infinito.
 
-Vamos verificar, como exemplo, o método de prova com árvores (Tableaux). A sequência de símbolos é a lógica de predicados, adicionada de símbolos gráficos, como traços e números, que ajudam a *desenhar* a prova. Como estamos sempre lidando com fórmulas com um número finito de predicados, quantificadores e conectivos, o número de nós da árvore nunca será infinito, consequentemente a árvore terá um número finito de caminhos. Assumindo isso, temos um procedimento de decisão preciso que sempre termina, pois verifica se, para cada caminho, o mesmo está aberto ou fechado. Desta forma, podemos classificar a árvore do Tableaux como um método de prova formal para *satisfazibilidade* da lógica de predicados.
+Vamos verificar, como exemplo, o método de prova com árvores (Tableaux). A sequência de símbolos é a lógica proposicional, adicionada de símbolos gráficos, como traços e números, que ajudam a *desenhar* a prova. Como estamos sempre lidando com fórmulas com um número finito de átomos e conectivos, o número de nós da árvore nunca será infinito, consequentemente a árvore terá um número finito de caminhos. Assumindo isso, temos um procedimento de decisão preciso que sempre termina, pois verifica se, para cada caminho, o mesmo está aberto ou fechado. Desta forma, podemos classificar a árvore do Tableaux como um método de prova formal para *satisfazibilidade* da lógica de predicados.
 
-Os quatro métodos (também chamados de estilos) de prova formal são tableaux (o método da árvore é só um dos tipos de tableaux), axiomático, dedução natural e cálculo de sequents (muito usado em ferramentas provadoras de teoremas). Vamos dar uma olha nos métodos **axiomático** e **dedução**.
-
+Vamos dar uma olhada aqui nos seguintes sistemas dedutivos, que fornecem meios de realizar provas formais na lógica: **axiomático** e **dedução**.
 
 ## Sistemas Axiomáticos
 
-Começo novamente resgatando as árvores: todas elas trazem informação sobre *satisfazibilidade* apenas. Se a árvore tem apenas caminhos fechados, o conjunto de fórmulas na raiz é insatisfazível; se algum caminho sobrar aberto, há pelo menos um caso (modelo) para satisfação. Assim, é natural dizer que a principal noção de provas em árvores é a satisfazibilidade de um conjunto de fórmulas. 
+Começo novamente resgatando as árvores do Tableaux: todas elas trazem informação sobre *satisfazibilidade* apenas. Se a árvore tem apenas caminhos fechados, o conjunto de fórmulas na raiz é insatisfazível; se algum caminho sobrar aberto, há pelo menos um caso (modelo) para satisfação. Assim, é natural dizer que a principal noção de provas em árvores é a satisfazibilidade de um conjunto de fórmulas. 
 
 Por outro lado, em sistemas **axiomáticos** de prova (também conhecidos como sistemas de *Hilbert* ou *Hilbert-Frege*), a noção é provar a **validade** de uma fórmula. Sim, *uma* fórmula apenas; nesses sistemas, queremos verificar se uma fórmula é sempre verdadeira. Vou mostrar um primeiro exemplo de prova axiomática, e ir explicando aos poucos os componentes.
 
-Suponha que queremos demonstrar se a seguinte fórmula *(¬P →P)→P* é válida (vou começar com a lógica proposicional, que é mais fácil, depois estendo para predicados). Ajuda saber, já já explico por quê, que ela é sim válida, por isso é seguro tentar a prova. Para começar, temos que ter um lugar de onde partir, para começar essa prova, algumas afirmações que sabemos ser válidas sempre, uma base de lançamento segura. Fórmulas que sabemos ser válidas independente de outras, essas vamos chamar de **axiomas**. Querem ver três exemplos de axiomas?
+Suponha que queremos demonstrar se a seguinte fórmula *(¬P → P)→ P* é válida. Ajuda saber, já já explico por quê, que ela é sim válida, por isso é seguro tentar a prova. Para começar, temos que ter um lugar de onde partir, para começar essa prova, algumas afirmações que sabemos ser válidas sempre, uma base de lançamento segura. Fórmulas que sabemos ser válidas independente de outras, essas vamos chamar de **axiomas**. Querem ver três exemplos de axiomas?
 
-(A1) *α→(β →α)*
+(A1) *α→(β → α)*
 
 (A2)  *(α→(β →γ ))→((α→β)→(α→γ))*
 
 (A3) *(¬β →¬α)→((¬β →α)→β)*
 
-Parecem complicadas, eu sei. Atentem-se para A1, que é a mais fácil, considerando aqui que α e β representam **uma fórmula qualquer bem-formada**. Assim, em A1, se você colocar uma fórmula qualquer do lado esquerdo de uma implicação, e do lado direito colocar qualquer outra fórmula implicando na primeira novamente, isso *sempre será verdade*. Se *α=p∨ q* e *β=q*, é só conferir: *(p∨ q)→(q→(p∨ q))* só tem modelos na sua tabela verdade.
+Parecem complicadas, eu sei. Atentem-se para A1, que é a mais fácil, considerando aqui que α e β representam **uma fórmula qualquer bem-formada** na lógica proposicional (ficou convencionado na lógica de que letras gregas representam fórmulas). Assim, em A1, se você colocar uma fórmula qualquer do lado esquerdo de uma implicação, e do lado direito colocar qualquer outra fórmula implicando na primeira novamente, isso *sempre será verdade*. Se *α=p∨ q* e *β=q*, é só conferir: *(p∨ q)→(q→(p∨ q))* só tem modelos na sua tabela verdade - todas as interpretações são verdadeiras.
 
 Se tivermos algumas fórmulas iniciais pra começar, precisamos tentar chegar, a partir delas, na fórmula que queremos provar como válida. Faremos isso através de algumas transformações sintáticas nas fórmulas, e teremos certeza de que as transformações são corretas é através de **regras de inferência**. Olha aí um exemplo, que a gente chama tradicionalmente de *Modus Ponens*, do latim para "Modo de Afirmar".
 
@@ -37,7 +42,7 @@ Regra (MP):
 
 ![outros_estilos/t1.png](outros_estilos/t1.png)
 
-Na regra, α e β são, novamente, qualquer fórmula. Antes do triângulo, temos as entradas da regra, e depois, a saída, o resultado. Aqui, leia-se: se uma implicação for válida, e o lado esquerdo dela também for, então podemos gerar uma nova linha na prova, com o lado direito dessa implicação sozinho. Os três axiomas e a regra MP formam um **sistema axiomático**, e já dá para explorar algumas provas com esse sistema bem pequenininho.
+Na regra, α e β são, novamente, qualquer fórmula. Antes do triângulo, temos as entradas da regra, e depois, a saída, o resultado. Aqui, leia-se: se uma implicação for válida, e o lado esquerdo dela também for, então podemos gerar uma nova linha na prova, com o lado direito dessa implicação sozinho. Os três axiomas que mostrei acima, mais a regra MP, formam um **sistema axiomático**, e já dá para explorar algumas provas com esse sistema bem pequenininho.
 
 Abaixo, usando esse sistema, mostro como podemos estruturar uma prova no método axiomático. Começamos usando os axiomas A1 e A2, substituindo α,β,γ com fórmulas que parecem ser úteis para esta prova específica.
 
@@ -53,23 +58,21 @@ O resultado é outra implicação! Assim, podemos tentar usar novamente axiomas 
 
 ![outros_estilos/t4.png](outros_estilos/t4.png)
 
-A partir do exemplo, conseguimos estabelecer algumas ideias gerais de uma prova formal axiomática; ela é uma sequência de fórmulas bem formadas, em que cada fórmula dessa sequência ou é um axioma ou o resultado de aplicação de uma regra de inferência, usando como entrada algumas fórmulas anteriores na sequência. A prova da validade de uma fórmula têm esta como última fórmula da sequência. Se existe uma prova formal para uma fórmula α dentro de um sistema axiomático A, então *α é um teorema do sistema A*; simbolicamente, <img src="https://render.githubusercontent.com/render/math?math=\vdash_A \alpha">. O símbolo <img src="https://render.githubusercontent.com/render/math?math=\vdash"> reflete uma prova formal, sintática, de um teorema ou argumento (compare com vinculação semântica, símbolo <img src="https://render.githubusercontent.com/render/math?math=\models">). 
+A partir do exemplo, conseguimos estabelecer algumas ideias gerais de uma prova formal axiomática; ela é uma sequência de fórmulas bem formadas, em que cada fórmula dessa sequência ou é um axioma ou o resultado de aplicação de uma regra de inferência, usando como entrada algumas fórmulas anteriores na sequência. A prova da validade de uma fórmula têm esta como última fórmula da sequência. Se existe uma prova formal para uma fórmula α dentro de um sistema axiomático A, então *α é um teorema do sistema A*; simbolicamente, ⊢A. O símbolo ⊢ reflete uma prova formal, sintática, de um teorema ou argumento (compare com vinculação semântica, símbolo ⊧). 
 
-Até agora, tudo ok. Mas, claramente, dentro de um sistema tão pequeno como este, dificilmente poderemos provar todos os teoremas da lógica proposicional; por exemplo, não dá para provar *P ∨  ¬P*, já que nenhum dos axiomas pode lidar com disjunções. Isso nos leva a discutir um ponto importante. É interessante manter um sistema de prova simples, minimizando o número de axiomas e regras; por isso, é *muito comum* confinar a linguagem aceita pelo sistema a uma **porção restrita da linguagem completa**. 
+Com isso, podemos definir duas propriedades de um sistema dedutivo: *solidez* e *completude*. Um sistema A é sólido se apresenta a seguinte propriedade: se ⊢A α então ⊧A α. Isso significa que se há uma prova da validade de uma fórmula α nesse sistema, ela é correta (realmente α é uma tautologia, ou teorema). Por outro lado, um sistema A é completo se apresenta a propriedade: se ⊧A α então ⊢A α. Isso define que se uma fórmula é um teorema, é possível provar isso no sistema (temos axiomas e regras de inferência suficientes).
 
-Por exemplo, sabe-se que {*→,¬*} é um conjunto **núcleo (core) de conectivos** da lógica proposicional! Quer dizer que *qualquer fórmula* nessa lógica pode ser representada apenas pode esses dois conectivos.  Olhem as equivalências abaixo que permitem fazer isso:
+Até agora, tudo ok. No entanto, fica difícil de acreditar que o sistema axiomático que apresentei acima é sólido e completo para a lógica proposicional; por exemplo, não dá para provar *P ∨  ¬P*, já que nenhum dos axiomas pode lidar com disjunções. Isso nos leva a discutir um ponto importante. É interessante manter um sistema de prova simples, minimizando o número de axiomas e regras; por isso, é *muito comum* confinar a linguagem aceita pelo sistema a uma **porção restrita da linguagem completa**. 
+
+Por exemplo, sabe-se que {*→,¬*} é um conjunto **núcleo (core) de conectivos** da lógica proposicional! Quer dizer que *qualquer fórmula* nessa lógica pode ser representada apenas pode esses dois conectivos. Olhem as equivalências abaixo que permitem fazer isso:
 
 ![outros_estilos/t5.png](outros_estilos/t5.png)
 
-Então, para mostrar que  *P ∨  ¬P* é válido, basta transformá-la em *(¬P →P)→P*, e então...opa, já mostramos isso, não é? As primeiras cinco linhas da prova axiomática anterior fazem exatamente isso.
+Então, para mostrar que  *P ∨  ¬P* é válido, basta transformá-la em *(¬P →P)→P*, e então...opa, já mostramos isso, não é? As primeiras cinco linhas da prova axiomática anterior fazem exatamente isso. Enfim, o sistema apresentado, mesmo minúsculo, é completo e sólido para a lógica proposicional.
 
-Para a lógica de predicados, existem sistemas axiomáticos na literatura com  axiomas e  regras de inferência considerando uma linguagem apenas com o quantificador universal. Para isso funcionar, temos que lembrar que um quantificador existencial pode ser escrito como universal com negações: <img src="https://render.githubusercontent.com/render/math?math=\exists x \alpha"> equivalente a <img src="https://render.githubusercontent.com/render/math?math=\neg \forall x\neg\alpha">.
-
-Por fim, quero mostrar o uso de um sistema axiomático para demonstrar um argumento. Neste caso, as premissas são consideradas como *assumptions* (A na figura abaixo), colocadas como fórmulas válidas na prova, junto com axiomas e resultados da aplicação de regras. Aqui, demonstramos que o argumento <img src="https://render.githubusercontent.com/render/math?math=P\rightarrow Q, Q \rightarrow R \vdash P \rightarrow R*">.
+Por fim, quero mostrar o uso deste sistema axiomático para demonstrar a *validade de um argumento*. Neste caso, as premissas são consideradas como *assumptions* (A na figura abaixo), colocadas como fórmulas válidas na prova, junto com axiomas e resultados da aplicação de regras. Aqui, demonstramos que o argumento p→q,q→r⊢p→r.
 
 ![outros_estilos/t6.png](outros_estilos/t6.png)
-
-
 
 ## Dedução Natural
 
@@ -93,11 +96,9 @@ Um sistema de dedução natural não possui axiomas. As regras são organizadas 
 
 ![outros_estilos/t7.png](outros_estilos/t7.png)
 
-Uma regra deve ser lida de cima para baixo; acima do traço, temos as fórmulas de entrada da regra, necessariamente já conhecidas como verdadeiras, e abaixo do traço, temos a fórmula resultante da regra. Na regra de introdução da conjunção <img src="https://render.githubusercontent.com/render/math?math=\land_i">, se forem provadas como verdadeiras as fórmulas <img src="https://render.githubusercontent.com/render/math?math=\phi ,\psi">, podemos deduzir a conjunção entre os dois. Já na eliminação da conjunção (<img src="https://render.githubusercontent.com/render/math?math=\land_e">), basta que se tenha como verdadeira uma conjunção de duas fórmulas, qualquer uma delas pode ser tomada como verdade, já que as duas são verdadeiras ao mesmo tempo. 
+Uma regra deve ser lida de cima para baixo; acima do traço, temos as fórmulas de entrada da regra, necessariamente já conhecidas como verdadeiras, e abaixo do traço, temos a fórmula resultante da regra. Na regra de introdução da conjunção, se forem provadas como verdadeiras as fórmulas, podemos deduzir a conjunção entre os dois. Já na eliminação da conjunção, basta que se tenha como verdadeira uma conjunção de duas fórmulas, qualquer uma delas pode ser tomada como verdade, já que as duas são verdadeiras ao mesmo tempo. 
 
-Você deve estar achando essas regras bem fáceis, e nisso concordo com você. Ainda assim, saber aplicá-las exige um pouco mais de habilidade, e é neste ponto que eu quero exercitar a habilidade de dedução. Vamos voltar ao argumento de exemplo, reescrevendo-o para a utilização da dedução natural.
-
-<img src="https://render.githubusercontent.com/render/math?math=d \land c,p \vdash c \land p">
+Você deve estar achando essas regras bem fáceis, e nisso concordo com você. Ainda assim, saber aplicá-las exige um pouco mais de habilidade, e é neste ponto que eu quero exercitar a habilidade de dedução. Vamos voltar ao argumento de exemplo, reescrevendo-o para a utilização da dedução natural: d ∧ c, p ⊢ c ∧ p
 
  Supondo que temos que realizar a prova de validade deste argumento, vamos montar o esquema de dedução, que é o primeiro passo para uma prova correta e organizada. Isso é importante, pois demonstrações são feitas para convencer outras pessoas por isso têm que ser precisas e claras. A primeira coisa é copiar as premissas, uma por linha numerada.
 
@@ -110,7 +111,7 @@ A ideia aqui é usar estas duas linhas como origem para transformações que vã
 Essa prática ajuda a saber onde queremos chegar, facilitando a definição da estratégia a utilizar. Olhando para a conclusão, você deve se perguntar: ``Qual o caminho mais apropriado para chegar a este tipo de conclusão?'' O que chamo de tipo de conclusão consiste na estrutura da fórmula. Neste caso, a conclusão tem uma estrutura de conjunção -- este é o conectivo principal da fórmula.
 
 Voltando à nossa dedução, qual seria a melhor forma de chegar a uma conjunção? 
-Que regras deveríamos aplicar para chegar lá? Como só vimos duas regras até agora, é simples:  para chegar a esta conjunção (*c ∧ p*), precisamos chegar a cada um dos lados da conjunção isoladamente, para no final juntar os dois no resultado, utilizando a regra <img src="https://render.githubusercontent.com/render/math?math=\land_i">. Você poderia já colocar estes dois lados nas linhas acima da conclusão, assim:
+Que regras deveríamos aplicar para chegar lá? Como só vimos duas regras até agora, é simples:  para chegar a esta conjunção (*c ∧ p*), precisamos chegar a cada um dos lados da conjunção isoladamente, para no final juntar os dois no resultado, utilizando a regra de introdução de conjunção. Você poderia já colocar estes dois lados nas linhas acima da conclusão, assim:
 
 ![outros_estilos/t10.png](outros_estilos/t10.png)
 
@@ -138,10 +139,7 @@ A eliminação da implicação nada mais é que a regra que já vimos no sistema
 
 Aqui tem uma novidade: teremos agora como \textit{introduzir} uma implicação onde não existe uma. Lembre-se de que uma fórmula como *p→q* não afirma *p* nem *q*. Criar uma implicação em uma dedução exige que criemos \textit{hipóteses temporárias}, cujo efeito (escopo) é limitado a apenas um pedaço da dedução -- um trecho dentro da lista ordenada de linhas numeradas. Este trecho temporário é representado por uma espécie de quadro de contorno sólido, uma *caixa*.
 
-Vamos trabalhar em cima de um exemplo de argumento:
-
-<img src="https://render.githubusercontent.com/render/math?math=\neg j\rightarrow \neg c \vdash  c\rightarrow \neg\neg j
-">
+Vamos trabalhar em cima de um exemplo de argumento: ¬j → ¬c ⊢ c → ¬¬j
 
 Vou começar escrevendo a premissa, seguida da conclusão no final. O espaço em branco entre elas será nossa área de trabalho, onde vamos pensar a estratégia.
 
