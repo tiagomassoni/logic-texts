@@ -68,7 +68,7 @@ Por exemplo, sabe-se que {*→,¬*} é um conjunto **núcleo (core) de conectivo
 
 ![outros_estilos/t5.png](outros_estilos/t5.png)
 
-Então, para mostrar que  *P ∨  ¬P* é válido, basta transformá-la em *(¬P →P)→P*, e então...opa, já mostramos isso, não é? As primeiras cinco linhas da prova axiomática anterior fazem exatamente isso. Enfim, o sistema apresentado, mesmo minúsculo, é completo e sólido para a lógica proposicional.
+Então, para mostrar que  *P ∨  ¬P* é válido, basta transformá-la em *(¬P→P)*, e então...opa, já mostramos isso, não é? As primeiras cinco linhas da prova axiomática anterior fazem exatamente isso. Enfim, o sistema apresentado, mesmo minúsculo, é completo e sólido para a lógica proposicional.
 
 Por fim, quero mostrar o uso deste sistema axiomático para demonstrar a *validade de um argumento*. Neste caso, as premissas são consideradas como *assumptions* (A na figura abaixo), colocadas como fórmulas válidas na prova, junto com axiomas e resultados da aplicação de regras. Aqui, demonstramos que o argumento p→q,q→r⊢p→r.
 
